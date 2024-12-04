@@ -461,6 +461,7 @@ body {
 }
 
 /* Carousel */
+/* Carousel */
 .carousel {
   position: absolute;
   top: 0;
@@ -472,7 +473,7 @@ body {
 
 .carousel-images {
   display: flex;
-  width: 500%; /* Five images */
+  width: calc(100% * 6); /* Five images + one duplicate for seamless looping */
   height: 100%;
   transition: transform 1s ease-in-out; /* Smooth sliding transition */
 }

@@ -131,15 +131,52 @@ document.addEventListener('DOMContentLoaded', () => {
 // HERO /////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   const carouselImages = document.querySelector('.carousel-images');
-  const totalImages = document.querySelectorAll('.carousel-images img').length;
+  const images = document.querySelectorAll('.carousel-images img');
+  const totalImages = images.length;
+
   let currentIndex = 0;
+  let interval;
 
-  setInterval(() => {
-    // Move to the next image
-    currentIndex = (currentIndex + 1) % totalImages;
+  // Clone the first image and append it to the end for seamless looping
+  const firstImageClone = images[0].cloneNode(true);
+  carouselImages.appendChild(firstImageClone);
 
-    // Apply sliding effect by adjusting the transform property
-    const offset = currentIndex * -100; // Move one image width
-    carouselImages.style.transform = `translateX(${offset}vw)`;
-  }, 7000); // 7 seconds per image
+  // Function to update the carousel
+  function updateCarousel() {
+    currentIndex++;
+    carouselImages.style.transition = 'transform 1s ease-in-out';
+    carouselImages.style.transform = `translateX(-${currentIndex * 100}vw)`;
+
+    // Loop back to the first image seamlessly
+    if (currentIndex === totalImages) {
+      setTimeout(() => {
+        carouselImages.style.transition = 'none'; // Disable transition
+        carouselImages.style.transform = 'translateX(0)';
+        currentIndex = 0; // Reset index
+      }, 1000); // Match transition duration
+    }
+  }
+
+  // Automatically slide every 7 seconds
+  function startCarousel() {
+    interval = setInterval(updateCarousel, 5000);
+  }
+
+  // Stop the carousel
+  function stopCarousel() {
+    clearInterval(interval);
+  }
+
+  // Ensure the carousel stays aligned when the viewport is resized
+  function handleResize() {
+    stopCarousel();
+    carouselImages.style.transition = 'none'; // Disable transition during resize
+    carouselImages.style.transform = `translateX(-${currentIndex * 100}vw)`;
+    startCarousel();
+  }
+
+  // Listen for resize events
+  window.addEventListener('resize', handleResize);
+
+  startCarousel();
 });
