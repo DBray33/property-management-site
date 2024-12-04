@@ -109,3 +109,37 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScrollY = currentScrollY;
   });
 });
+
+// //////////////////////////////////
+// SITE LOGO ///////////////////////////
+// Animation for when
+document.addEventListener('DOMContentLoaded', () => {
+  const logo = document.getElementById('site-logo'); // Ensure this ID matches the logo element
+
+  logo.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent immediate navigation
+    logo.classList.add('clicked'); // Add clicked class
+
+    // Delay navigation until the animation completes
+    setTimeout(() => {
+      window.location.href = logo.getAttribute('href'); // Navigate after animation
+    }, 1000); // Match animation duration (1s)
+  });
+});
+
+// //////////////////////////////////
+// HERO /////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselImages = document.querySelector('.carousel-images');
+  const totalImages = document.querySelectorAll('.carousel-images img').length;
+  let currentIndex = 0;
+
+  setInterval(() => {
+    // Move to the next image
+    currentIndex = (currentIndex + 1) % totalImages;
+
+    // Apply sliding effect by adjusting the transform property
+    const offset = currentIndex * -100; // Move one image width
+    carouselImages.style.transform = `translateX(${offset}vw)`;
+  }, 7000); // 7 seconds per image
+});
