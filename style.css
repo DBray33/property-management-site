@@ -20,7 +20,7 @@ body {
 :root {
   --primary-color: #ffb902; /* Sets a primary color variable */
   --secondary-color: #0254ff; /* Sets a primary color variable */
-  --light-color: #fff; /* Sets a primary color variable */
+  --light-color: #f4f4f4; /* Sets a primary color variable */
   --dark-color: #333; /* Sets a primary color variable */
 }
 
@@ -377,6 +377,7 @@ body {
   height: 60px;
 }
 
+/* Hamburger Menu */
 .hamburger-icon {
   background: none;
   border: none;
@@ -385,14 +386,13 @@ body {
   margin-left: auto; /* Pushes the icon to the far right */
 }
 
-/* Hamburger Menu */
 .hamburger-menu {
   position: fixed;
   top: 0;
   right: -300px; /* Hidden by default */
   height: 100%;
   width: 300px;
-  background-color: white;
+  background-color: var(--light-color);
   box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -400,6 +400,7 @@ body {
   justify-content: center;
   transform: translateX(0);
   transition: right 0.3s ease;
+  overflow: scroll;
 }
 
 .hamburger-menu.open {
@@ -425,7 +426,7 @@ body {
   text-decoration: none;
   font-size: 1.2rem;
   color: black;
-  background-color: white; /* Explicit default background color */
+  background-color: var(--light-color); /* Explicit default background color */
   transition: background-color 0.5s ease-out, color 0.3s ease; /* Default unhover transition */
 }
 
@@ -443,8 +444,8 @@ body {
 /* Close Menu Icon */
 .close-menu-icon {
   position: absolute;
-  top: 60px;
-  right: 130px;
+  top: 30px;
+  right: 20px;
   width: 40px;
   height: 40px;
   background-color: black;
