@@ -1,0 +1,317 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Removes default margin from browsers */
+  padding: 0; /* Removes default padding */
+  font-family: 'Josefin Sans', Helvetica, sans-serif; /* Sets default font */
+  font-size: 16px; /* Base font size */
+  line-height: 1.5; /* Improves readability */
+  color: #333; /* Sets a default text color */
+  background-color: #fff; /* Sets a default background color */
+  box-sizing: border-box; /* Ensures consistent box model calculations */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+:root {
+  --primary-color: #ffb902; /* Sets a primary color variable */
+  --secondary-color: #0254ff; /* Sets a primary color variable */
+  --light-color: #fff; /* Sets a primary color variable */
+  --dark-color: #333; /* Sets a primary color variable */
+}
+
+/* Featured Listings Section */
+.featured-listings h1 {
+  color: black;
+  font-size: 2rem;
+  margin-top: 5rem;
+  margin-bottom: -2rem;
+  text-align: left;
+}
+
+.featured-listings .container {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  margin: 1rem auto 3rem;
+}
+
+.featured-listings .panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  margin: 10px;
+  position: relative;
+  transition: all 200ms ease-in;
+}
+
+.featured-listings .panel.active {
+  flex: 5;
+}
+
+.featured-listings .panel a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  text-decoration: none;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  overflow: hidden;
+}
+
+.featured-listings .panel-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  line-height: calc(15%);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 2;
+}
+
+.featured-listings .panel-button:hover {
+  background-color: #444;
+  color: var(--primary-color);
+}
+
+/* ////////////////////////// */
+/*  HEADER ////////////////////*/
+/* Default Header Style */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 110px;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: flex-end; /* Align items to the bottom */
+  justify-content: center;
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hiding/showing */
+}
+
+#header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+#header .container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+.header-nav .nav-list {
+  display: flex;
+  gap: 1.1rem;
+  list-style: none;
+}
+
+.header-nav .nav-list a {
+  position: relative; /* Required for pseudo-elements */
+  text-decoration: none;
+  letter-spacing: 0.9px;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem 0.2rem;
+  border-radius: 20px; /* Ensures the shape remains even without hover */
+  box-sizing: border-box; /* Makes padding included in size */
+  overflow: hidden; /* Ensures the background effect stays within the link boundaries */
+  transition: color 0.3s; /* Smooth text color transition */
+  border-right: 1px solid lightgray; /* Vertical border */
+}
+
+.header-nav .nav-list a:last-child {
+  border-right: none; /* Remove border from the last link */
+}
+
+.header-nav .nav-list a::before {
+  content: ''; /* Empty content for pseudo-element */
+  position: absolute;
+  top: 0; /* Align to the top of the parent element */
+  left: 0; /* Align to the left of the parent element */
+  width: 100%; /* Cover the full width */
+  height: 100%; /* Cover the full height */
+  background-color: rgba(2, 84, 255, 0.2); /* 50% transparent blue */
+  border-radius: inherit; /* Match the parent element's border-radius */
+  transform: scale(0); /* Start small at center */
+  transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+  z-index: -1; /* Send it behind the text */
+}
+
+.header-nav .nav-list a:hover::before {
+  transform: scale(1); /* Grow to cover the full area */
+}
+
+.header-nav .nav-list a:hover {
+  color: white; /* Change text color on hover */
+}
+
+/* Media Query for Viewports Smaller than 800px */
+@media (max-width: 860px) {
+  #header {
+    display: none; /* Hide the default header */
+  }
+}
+
+/* //////////////////////////// */
+/* NAVBAR //////////////////////*/
+/* Navbar Style */
+/* General styles for the navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Hidden by default */
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#navbar.visible {
+  display: block; /* Show when scrolled down */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 60px;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.hamburger-icon {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Hidden by default */
+  height: 100%;
+  width: 300px;
+  background-color: white;
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(0);
+  transition: right 0.3s ease;
+}
+
+.hamburger-menu.open {
+  right: 0; /* Slide in when open */
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 100%; /* Ensure full-width menu items */
+}
+
+.menu-list li {
+  margin: 0; /* Remove margin between list items */
+}
+
+.menu-list a {
+  display: block;
+  width: 100%; /* Full width for links */
+  padding: 1rem; /* Padding for better touch targets */
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: black;
+  background-color: white; /* Explicit default background color */
+  transition: background-color 0.5s ease-out, color 0.3s ease; /* Default unhover transition */
+}
+
+.menu-list a:hover {
+  background-color: var(--primary-color); /* Background color on hover */
+  color: white; /* Optional: Change text color */
+  transition: background-color 0s ease, color 0.3s ease; /* Immediate hover effect */
+}
+
+/* Ensure there is no gap between hovered backgrounds */
+.menu-list li + li {
+  margin-top: -1px; /* Overlap slightly to remove gaps */
+}
+
+/* Close Menu Icon */
+.close-menu-icon {
+  position: absolute;
+  top: 60px;
+  right: 130px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-menu-icon:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* Media Query for Viewports Smaller than 800px */
+@media (max-width: 860px) {
+  #navbar {
+    display: block; /* Always visible */
+    top: 0;
+  }
+
+  #navbar.visible {
+    display: block; /* Override to ensure visibility */
+  }
+
+  #header {
+    display: none; /* Hide the header for small screens */
+  }
+}
