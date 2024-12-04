@@ -3,9 +3,58 @@
     margin-top: 57px;
   }
   .hero-content {
-    top: 25%;
+    top: 35%;
   }
   .hero-title {
     font-size: 3rem;
+  }
+}
+
+/* Media query for landscape orientation on smatphones */
+@media (max-height: 595px) {
+  #hero {
+    margin-top: 90px;
+  }
+  .hero-content {
+    top: 55%;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-height: 595px) and (max-width: 860px) {
+  #hero {
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    top: 45%;
+  }
+
+  .hero-button {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-height: 595px) and (max-width: 633px) {
+  #hero {
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    top: 45%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    margin-top: 0.8rem;
   }
 }

@@ -495,7 +495,7 @@ body {
 
 .hero-content {
   position: absolute;
-  top: 20%; /* Center vertically */
+  top: 30%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust for exact centering */
   width: 90%; /* Adjust width to span more */
