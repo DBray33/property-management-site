@@ -127,6 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const logo = document.querySelector('.site-logo');
+
+  logo.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default link behavior
+    logo.classList.add('clicked'); // Add the clicked class
+
+    // Delay navigation until animation completes
+    setTimeout(() => {
+      window.location.href = logo.getAttribute('href'); // Navigate to the link
+    }, 500); // Match the transition duration (0.5s)
+  });
+});
+
 // //////////////////////////////////
 // HERO /////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
