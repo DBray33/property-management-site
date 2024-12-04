@@ -140,7 +140,7 @@ body {
 .featured-listings .container {
   display: flex;
   flex-direction: row;
-  width: 85%;
+  width: 100%;
   margin: 1rem auto 3rem;
 }
 
@@ -153,7 +153,7 @@ body {
   color: #fff;
   cursor: pointer;
   flex: 1;
-  margin: 10px;
+  margin: 1px;
   position: relative;
   transition: all 200ms ease-in;
 }
