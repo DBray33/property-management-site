@@ -150,6 +150,13 @@ body {
   text-align: center;
 }
 
+.featured-listings h2 {
+  color: black;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
 .featured-listings .panel {
   background-size: cover;
   background-position: center;
