@@ -1,0 +1,11 @@
+@media (max-width: 842px) {
+  #hero {
+    margin-top: 57px;
+  }
+  .hero-content {
+    top: 25%;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+}
