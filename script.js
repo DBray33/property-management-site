@@ -48,6 +48,7 @@ document.addEventListener('click', () => {
 
 // //////////////////////////////////
 // NAVBAR ///////////////////////////
+
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('#navbar');
   const hamburgerIcon = document.querySelector('.hamburger-icon');
