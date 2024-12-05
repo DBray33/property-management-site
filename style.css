@@ -28,11 +28,10 @@ body {
 /* Universal Floating Logo */
 .site-logo {
   position: fixed;
-  top: 5px; /* Spacing from the top */
-  left: 5px; /* Spacing from the left */
+  top: 5px;
+  left: 5px;
   font-size: 1.8rem; /* Text size */
   font-weight: bold; /* Bold text */
-  color: black; /* Default text color */
   text-decoration: none; /* Remove underline */
   z-index: 1001; /* Keep on top */
   padding: 0.7rem 0.3rem 0.3rem; /* Padding for spacing */
@@ -41,12 +40,41 @@ body {
   line-height: 1.8rem; /* Match text size */
   overflow: hidden; /* Hide overflow for background animation */
   transition: color 0.3s ease; /* Smooth text color change */
+  color: #ffb902; /* Text color */
+  text-shadow: 0px 2px 0px black; /* Hard bottom shadow */
 }
 
-.site-logo:hover {
-  color: var(--primary-color); /* Change color on hover */
-  /* background-color: var(--secondary-color); */
+/* Ensure the same color for visited links */
+.site-logo:visited {
+  color: none;
 }
+
+/* Optional hover state */
+.site-logo:hover {
+  color: black; /* Reverse text color */
+  text-shadow: 0px 2px 0px #ffb902; /* Reverse shadow color */
+}
+
+/* /////////////////////////////////////////// */
+.menu-logo a {
+  font-size: 5rem;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative; /* For pseudo-element positioning */
+  display: inline-block; /* Ensures proper alignment */
+  overflow: hidden; /* Hide overflow during animation */
+  color: var(--primary-color);
+  text-shadow: -1px -1px 0 var(--primary-color),
+    /* Top-left */ 1px -1px 0 var(--primary-color),
+    /* Top-right */ -1px 3px 0 black, /* Bottom-left */ 1px 3px 0 black; /* Bottom-right */
+}
+
+.menu-logo a:hover {
+  color: black; /* Change text color */
+  text-shadow: -1px -1px 0 black, /* Top-left */ 1px -1px 0 black,
+    /* Top-right */ -1px 1px 0 black, /* Bottom-left */ 1px 1px 0 black; /* Bottom-right */
+}
+/* /////////////////////////////////////////// */
 
 .site-logo::before {
   content: ''; /* Required for pseudo-element */
@@ -400,24 +428,125 @@ body {
 }
 
 .hamburger-menu {
-  position: fixed;
-  top: 0;
+  position: fixed; /* Keep the menu fixed at the same position */
+  top: 0; /* Anchor to the top of the viewport */
   right: -300px; /* Hidden by default */
-  height: 100%;
-  width: 300px;
+  height: 100%; /* Full height of the viewport */
+  width: 300px; /* Fixed width */
   background-color: lightgray;
   box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Horizontally center child content */
+  justify-content: flex-start; /* Start content at the top */
   transform: translateX(0);
   transition: right 0.3s ease;
-  overflow: scroll;
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .hamburger-menu.open {
   right: 0; /* Slide in when open */
+}
+
+.menu-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Horizontally center child elements */
+  justify-content: center; /* Vertically center child elements if needed */
+  margin-top: 90px;
+  padding: 20px 0;
+}
+
+.menu-logo a,
+.menu-number a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the inherited color or explicitly set it */
+  text-align: center; /* Ensure text is centered within the element */
+  display: inline-block; /* Make it block-level to apply alignment properly */
+}
+
+.menu-logo a:hover,
+.menu-number a:hover {
+  color: var(--primary-color); /* Change color on hover */
+}
+
+.menu-number a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Menu Logo */
+.menu-logo a {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  position: relative; /* For pseudo-element positioning */
+  display: inline-block; /* Ensures proper alignment */
+  overflow: hidden; /* Hide overflow during animation */
+  text-shadow: -1px -1px 0 var(--primary-color),
+    /* Top-left */ 1px -1px 0 var(--primary-color),
+    /* Top-right */ -1px 3px 0 black, /* Bottom-left */ 1px 3px 0 black; /* Bottom-right */
+}
+
+.menu-logo a:hover {
+  color: black; /* Change text color */
+  text-shadow: -1px -1px 0 black, /* Top-left */ 1px -1px 0 black,
+    /* Top-right */ -1px 1px 0 black, /* Bottom-left */ 1px 1px 0 black; /* Bottom-right */
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Add space between buttons */
+  margin-top: 20px; /* Space above the buttons */
+  align-items: center; /* Center align buttons horizontally */
+}
+
+.menu-button {
+  padding: 10px 20px; /* Add padding for larger touch targets */
+  margin-bottom: 1rem;
+  font-size: 1rem; /* Adjust font size */
+  font-weight: bold; /* Bold text */
+  color: black; /* Button text color */
+  background: linear-gradient(
+    to bottom,
+    #ffd251,
+    #ffb902
+  ); /* Light to dark gradient */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add slight shadow for depth */
+  transition: 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  display: flex; /* Use flexbox for icon and text alignment */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  gap: 10px; /* Add space between icon and text */
+}
+
+.menu-button i {
+  font-size: 1.2rem; /* Adjust icon size */
+}
+
+.menu-button:hover {
+  background: linear-gradient(
+    to bottom,
+    #ffb902,
+    #e6a802
+  ); /* Slightly darker gradient on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.menu-button:active {
+  transform: scale(0.95); /* Shrink button slightly on click */
+  background: linear-gradient(
+    to bottom,
+    #e6a802,
+    #d49502
+  ); /* Darker gradient on click */
 }
 
 .menu-list {
@@ -441,6 +570,7 @@ body {
   color: black;
   background-color: lightgray; /* Explicit default background color */
   transition: background-color 0.5s ease-out, color 0.3s ease; /* Default unhover transition */
+  z-index: 0;
 }
 
 .menu-list a:hover {
@@ -473,6 +603,7 @@ body {
   align-items: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 2;
 }
 
 .close-menu-icon:hover {
