@@ -744,6 +744,7 @@ body {
 /* WELCOME SECTION ///////////////*/
 #welcome-section {
   position: relative;
+  height: 150vh;
   padding: 100px 20px;
   text-align: center;
   overflow: hidden;
@@ -764,6 +765,7 @@ body {
   letter-spacing: 0.5rem;
   margin-bottom: 1rem;
   z-index: 999;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .welcome-subheading {
@@ -784,7 +786,7 @@ body {
   border: 3px dashed rgba(2, 84, 255, 0.7); /* Dotted border */
   opacity: 20%;
   border-radius: 50%;
-  animation: rotate-circle 120s linear infinite;
+  animation: rotate-circle 100s linear infinite;
   z-index: 0;
 }
 
@@ -809,21 +811,6 @@ body {
   left: 50%;
   width: 200px;
   height: 100px;
-  transform: translate(-50%, -50%);
-  border: 3px dashed #ffb902; /* Primary orange color */
-  opacity: 30%;
-  border-radius: 50%;
-  animation: reverse-rotate-circle 20s linear infinite;
-  z-index: 0;
-}
-
-/* Reverse Rotating Circle */
-.rotating-circle-6 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 200px;
   transform: translate(-50%, -50%);
   border: 3px dashed #ffb902; /* Primary orange color */
   opacity: 30%;
@@ -857,6 +844,66 @@ body {
   opacity: 40%;
   border-radius: 50%;
   animation: reverse-rotate-circle 120s linear infinite;
+  z-index: 0;
+}
+
+/* Reverse Rotating Circle */
+.rotating-circle-6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  border: 3px dashed #ffb902; /* Primary orange color */
+  opacity: 30%;
+  border-radius: 50%;
+  animation: reverse-rotate-circle 20s linear infinite;
+  z-index: 0;
+}
+
+/* Reverse Rotating Circle */
+.rotating-circle-7 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  border: 3px dashed #0254ff; /* Primary orange color */
+  opacity: 30%;
+  border-radius: 50%;
+  animation: rotate-circle 120s linear infinite;
+  z-index: 0;
+}
+
+/* Reverse Rotating Circle */
+.rotating-circle-8 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 1000px;
+  transform: translate(-50%, -50%);
+  border: 3px dashed #ffb902; /* Primary orange color */
+  opacity: 30%;
+  border-radius: 50%;
+  animation: reverse-rotate-circle 190s linear infinite;
+  z-index: 0;
+}
+
+/* Reverse Rotating Circle */
+.rotating-circle-9 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  height: 1200px;
+  transform: translate(-50%, -50%);
+  border: 3px dashed #0254ff; /* Primary orange color */
+  opacity: 30%;
+  border-radius: 50%;
+  animation: reverse-rotate-circle 160s linear infinite;
   z-index: 0;
 }
 
