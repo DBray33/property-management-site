@@ -742,13 +742,16 @@ body {
 
 /* ////////////////////////////// */
 /* WELCOME SECTION ///////////////*/
+
 #welcome-section {
   position: relative;
-  height: 190vh;
+  min-height: 190vh;
   padding: 100px 20px;
   text-align: center;
   overflow: hidden;
-  z-index: auto;
+  /* z-index: auto; */
+  top: 0;
+  margin: 0;
 }
 
 .welcome-content {
@@ -995,7 +998,7 @@ body {
 }
 
 .card h1 {
-  font-size: 4rem;
+  font-size: 300%;
   color: var(--secondary-color);
 }
 
@@ -1040,12 +1043,17 @@ body {
   color: #fff; /* White text for contrast */
 }
 
+.card-back button {
+  margin-top: 3rem;
+}
+
 /* /////////////////////////////////////////// */
 /* FEATURED LISTINGS SECTION ///////////////// */
 .featured-listings {
+  position: relative;
   background-color: white;
-  padding-top: rem;
-  margin-top: 0;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .featured-listings .container {
