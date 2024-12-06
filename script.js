@@ -200,3 +200,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // //////////////////////////////////
 // //////////////////////////////////
 // //////////////////////////////////
+// Handle button clicks to flip the card
+document.querySelectorAll('.flip-button').forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent the click event from propagating to the document
+    const card = button.closest('.card');
+    card.classList.toggle('flipped');
+  });
+});
+
+// Handle clicks outside the card to reset flip
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('.card.flipped').forEach((flippedCard) => {
+    if (!flippedCard.contains(e.target)) {
+      flippedCard.classList.remove('flipped');
+    }
+  });
+});

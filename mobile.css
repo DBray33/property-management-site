@@ -58,3 +58,28 @@
     margin-top: 0.8rem;
   }
 }
+
+/* WELCOME */
+@media (max-width: 760px) {
+  .welcome-heading {
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; /* Stack the cards vertically */
+  }
+
+  .card {
+    margin-bottom: 1rem; /* Add spacing between stacked cards */
+  }
+}
