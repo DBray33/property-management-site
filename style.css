@@ -1036,13 +1036,12 @@ body {
   transition: transform 0.6s;
 }
 
-.card h1 {
-  font-size: 300%;
-  color: var(--secondary-color);
+.renters-card.flipped {
+  transform: rotateY(180deg);
 }
 
-.card.flipped {
-  transform: rotateY(180deg);
+.owners-card.flipped {
+  transform: rotateY(-180deg);
 }
 
 .card-front,
@@ -1063,21 +1062,63 @@ body {
 }
 
 .card-front {
-  background-color: lightgray; /* Light gray */
-  border: 1px solid black; /* Thin black border */
-  border-radius: 0.6rem; /* Optional rounded corners */
+  color: white;
+  text-align: center;
 }
 
+/* Background with Dark Transparent Overlay for Prospective Owners Card */
+.owners-card .card-front {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    /* Dark overlay */
+      url('https://i.postimg.cc/Dyt9WwNQ/i-Stock-1481616216.jpg') no-repeat
+      center center;
+  background-size: cover;
+}
+
+/* Background with Dark Transparent Overlay for Prospective Renters Card */
+.renters-card .card-front {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    /* Dark overlay */
+      url('https://i.postimg.cc/SK0mprqh/i-Stock-943147634.jpg') no-repeat
+      center center;
+  background-size: cover;
+}
+
+/* Back of the Card */
 .card-back {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent; /* Primary orange color */
+  background-color: transparent;
   transform: rotateY(180deg);
   color: #fff; /* White text for contrast */
-  padding: 0; /* Remove extra padding */
+  padding: 0;
   box-shadow: none;
   border: transparent;
+}
+
+.card-front h1,
+.card-front h2 {
+  margin-bottom: 1rem;
+}
+
+.card-front h1 {
+  font-size: 2rem;
+}
+
+.card-front h2 {
+  font-size: 1.2rem;
+}
+
+.hero-button {
+  padding: 0.8rem 1.2rem;
+  background-color: var(--secondary-color); /* Replace with secondary color */
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: darken(var(--secondary-color), 10%);
 }
 
 .back-section {
@@ -1186,6 +1227,109 @@ body {
   }
 }
 
+/* //////////////////////////// */
+/* WHY CHOOSE US */
+/* WHY CHOOSE US Section */
+.why-choose-us {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: black;
+  min-height: 110vh;
+}
+
+.why-choose-us h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff; /* Change to white for contrast against the black background */
+}
+
+/* Grid Layout */
+.why-choose-us .card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .card-grid {
+    grid-template-columns: 1fr; /* 1 card per row on smaller screens */
+  }
+
+  .why-choose-us {
+    text-align: center;
+    padding: 40px 20px 80px; /* Increased bottom padding to add more space */
+    background-color: black;
+    min-height: 130vh;
+  }
+}
+
+/* Card Styles */
+.why-choose-us .card {
+  perspective: 1000px; /* Enables 3D effect */
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+/* Front and Back Styling */
+.why-choose-us .card-front,
+.why-choose-us .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d; /* Enables 3D flip */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.6s ease-in-out;
+  border: 2px solid var(--primary-color); /* Add a border with primary color */
+}
+
+/* Front Side */
+.why-choose-us .card-front {
+  background-color: #000;
+  color: #fff;
+  transform: rotateX(0deg); /* Initial state for the front */
+}
+
+/* Back Side */
+.why-choose-us .card-back {
+  background-color: #333;
+  color: #fff;
+  transform: rotateX(180deg); /* Start flipped */
+}
+
+/* Hover Flip Effect */
+.why-choose-us .card:hover .card-front {
+  transform: rotateX(-180deg); /* Flips the front vertically */
+}
+
+.why-choose-us .card:hover .card-back {
+  transform: rotateX(0deg); /* Flips the back to the front */
+}
+
+/* Icon and Heading Styles */
+.why-choose-us .card-front i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.why-choose-us .card-front h2 {
+  font-size: 1.5rem;
+}
+
+.why-choose-us .card-back p {
+  font-size: 1rem;
+}
+
 /* /////////////////////////////////////////// */
 /* FEATURED LISTINGS SECTION ///////////////// */
 .featured-listings {
@@ -1265,4 +1409,67 @@ body {
 .featured-listings .panel-button:hover {
   background-color: #444;
   color: var(--primary-color);
+}
+/* /////////////////// */
+/* Contact */
+/* Contact */
+.contact {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact .form-group input,
+.contact .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact .form-group textarea {
+  resize: vertical;
+}
+
+.contact button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #444;
 }

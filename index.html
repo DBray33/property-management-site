@@ -169,9 +169,9 @@
 
       <!-- Info Cards -->
       <div class="card-container">
-        <div class="card">
+        <div class="card owners-card">
           <div class="card-front">
-            <h1>PROSPECTIVE OWNERS</h1>
+            <h1 class="owners">PROSPECTIVE OWNERS</h1>
             <h2>Interested in having your property managed?</h2>
             <button class="hero-button flip-button">Learn More</button>
           </div>
@@ -215,7 +215,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card renters-card">
           <div class="card-front">
             <h1>PROSPECTIVE RENTERS</h1>
             <h2>Are you looking to rent a home?</h2>
@@ -281,6 +281,80 @@
           <div class="icon-item">
             <img src="images/str.svg" alt="Short Term Rentals Icon" />
             <p>Short Term Rentals</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose-us">
+      <h1>WHY CHOOSE US?</h1>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-front">
+            <i class="fas fa-shield-alt"></i>
+            <h2>Reliability</h2>
+          </div>
+          <div class="card-back">
+            <p>
+              We ensure your property is managed with utmost care and
+              reliability.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-front">
+            <i class="fas fa-chart-line"></i>
+            <h2>Expertise</h2>
+          </div>
+          <div class="card-back">
+            <p>
+              Our team has years of experience in property management and
+              leasing.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-front">
+            <i class="fas fa-user-friends"></i>
+            <h2>Customer Focus</h2>
+          </div>
+          <div class="card-back">
+            <p>
+              Your satisfaction is our priority. We work to meet your needs.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-front">
+            <i class="fas fa-home"></i>
+            <h2>Comprehensive Service</h2>
+          </div>
+          <div class="card-back">
+            <p>
+              We handle everything from tenant placement to maintenance
+              requests.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-front">
+            <i class="fas fa-cogs"></i>
+            <h2>Efficiency</h2>
+          </div>
+          <div class="card-back">
+            <p>Our streamlined processes save you time and effort.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-front">
+            <i class="fas fa-dollar-sign"></i>
+            <h2>Value</h2>
+          </div>
+          <div class="card-back">
+            <p>
+              Our cost-effective solutions maximize your investment returns.
+            </p>
           </div>
         </div>
       </div>
@@ -518,6 +592,26 @@
       </div>
 
       <!-- Additional house sections can follow this format -->
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <h1>Contact Us</h1>
+      <form action="https://example.com/submit-form" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     </section>
 
     <script src="script.js"></script>
