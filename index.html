@@ -12,6 +12,18 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
+      rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
+      rel="stylesheet" />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -137,6 +149,9 @@
       <div class="rotating-circle-7"></div>
       <div class="rotating-circle-8"></div>
       <div class="rotating-circle-9"></div>
+      <div class="rotating-circle-10"></div>
+      <div class="rotating-circle-11"></div>
+      <div class="rotating-circle-12"></div>
       <div class="welcome-content">
         <h1 class="welcome-heading">WELCOME TO PMG.</h1>
         <p class="welcome-subheading">
@@ -152,6 +167,7 @@
         </p>
       </div>
 
+      <!-- Info Cards -->
       <div class="card-container">
         <div class="card">
           <div class="card-front">
@@ -167,32 +183,32 @@
                 <button
                   class="hero-button"
                   onclick="location.href='/manage-property'">
-                  Learn More
+                  Schedule a Meeting
                 </button>
               </div>
               <div class="section">
                 <i class="fas fa-user-tie"></i>
-                <h3>Owner Support</h3>
+                <h3>Our Services</h3>
                 <button
                   class="hero-button"
                   onclick="location.href='/owner-support'">
-                  Get Help
+                  More Info
                 </button>
               </div>
               <div class="section">
                 <i class="fas fa-chart-line"></i>
-                <h3>Track Income</h3>
+                <h3>Lease Appraisal</h3>
                 <button
                   class="hero-button"
                   onclick="location.href='/track-income'">
-                  View Reports
+                  View Form
                 </button>
               </div>
               <div class="section">
                 <i class="fas fa-handshake"></i>
-                <h3>Partner With Us</h3>
+                <h3>FAQs</h3>
                 <button class="hero-button" onclick="location.href='/partner'">
-                  Join Now
+                  More Info
                 </button>
               </div>
             </div>
@@ -201,15 +217,15 @@
 
         <div class="card">
           <div class="card-front">
-            <h1>CURRENT & PROSPECTIVE RENTERS</h1>
-            <h2>Are you a current tenant or looking to rent?</h2>
+            <h1>PROSPECTIVE RENTERS</h1>
+            <h2>Are you looking to rent a home?</h2>
             <button class="hero-button flip-button">Click Here</button>
           </div>
           <div class="card-back">
             <div class="back-section">
               <div class="section">
                 <i class="fas fa-building"></i>
-                <h3>Find Apartments</h3>
+                <h3>Find Rentals</h3>
                 <button
                   class="hero-button"
                   onclick="location.href='/find-apartments'">
@@ -218,30 +234,53 @@
               </div>
               <div class="section">
                 <i class="fas fa-file-signature"></i>
-                <h3>Lease Information</h3>
+                <h3>Why Rent With Us?</h3>
                 <button
                   class="hero-button"
-                  onclick="location.href='/lease-info'">
-                  Learn More
+                  onclick="location.href='/why-rent-with-us'">
+                  Discover Benefits
                 </button>
               </div>
               <div class="section">
                 <i class="fas fa-tools"></i>
-                <h3>Request Maintenance</h3>
+                <h3>Tenant Resources</h3>
                 <button
                   class="hero-button"
                   onclick="location.href='/maintenance'">
-                  Submit
+                  More Info
                 </button>
               </div>
               <div class="section">
                 <i class="fas fa-envelope"></i>
-                <h3>Contact Us</h3>
+                <h3>Questions?</h3>
                 <button class="hero-button" onclick="location.href='/contact'">
-                  Message
+                  Contact Us
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Types of Properties We Manage -->
+      <div class="property-types">
+        <h1 class="heading">WE MANAGE IT ALL...</h1>
+        <div class="icons-container">
+          <div class="icon-item">
+            <img src="images/residential.svg" alt="Residential Icon" />
+            <p>Residential</p>
+          </div>
+          <div class="icon-item">
+            <img src="images/multi-family.svg" alt="Multi-Family Icon" />
+            <p>Multi-Family</p>
+          </div>
+          <div class="icon-item">
+            <img src="images/commercial.svg" alt="Commercial Icon" />
+            <p>Commercial</p>
+          </div>
+          <div class="icon-item">
+            <img src="images/str.svg" alt="Short Term Rentals Icon" />
+            <p>Short Term Rentals</p>
           </div>
         </div>
       </div>
