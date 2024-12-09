@@ -73,7 +73,8 @@ body {
 .menu-logo a:hover {
   color: black; /* Change text color */
   text-shadow: -1px -1px 0 black, /* Top-left */ 1px -1px 0 black,
-    /* Top-right */ -1px 1px 0 black, /* Bottom-left */ 1px 1px 0 black; /* Bottom-right */
+    /* Top-right */ -1px 1px 0 var(--primary-color),
+    /* Bottom-left */ 1px 1px 0 var(--primary-color); /* Bottom-right */
 }
 /* /////////////////////////////////////////// */
 
@@ -746,7 +747,7 @@ body {
 #welcome-section {
   position: relative;
   min-height: 100vh;
-  padding: 100px 20px;
+  padding: 100px 20px 0;
   text-align: center;
   overflow: hidden;
   /* z-index: auto; */
@@ -1107,20 +1108,6 @@ body {
   font-size: 1.2rem;
 }
 
-.hero-button {
-  padding: 0.8rem 1.2rem;
-  background-color: var(--secondary-color); /* Replace with secondary color */
-  color: white;
-  border: none;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.hero-button:hover {
-  background-color: darken(var(--secondary-color), 10%);
-}
-
 .back-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1170,11 +1157,12 @@ body {
   color: black;
 }
 
-/* Types of Properties we manage */
+/* Types of Properties We Manage */
 .property-types {
   position: relative;
   text-align: center;
   padding: 40px 20px;
+  margin: 0 auto;
 }
 
 .property-types .heading {
@@ -1187,7 +1175,7 @@ body {
 .icons-container {
   display: flex;
   justify-content: center;
-  gap: 10rem;
+  gap: 5rem 10rem; /* Gap between icons in a row */
   flex-wrap: wrap;
 }
 
@@ -1197,11 +1185,14 @@ body {
   align-items: center;
   max-width: 160px;
   text-align: center;
+  text-decoration: none; /* Remove underline from links */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .icon-item img {
   width: 300px;
   height: 300px;
+  transition: transform 0.3s ease; /* Smooth scale effect */
 }
 
 .icon-item p {
@@ -1209,23 +1200,19 @@ body {
   font-size: 1.3rem;
   font-weight: 700;
   color: #555;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-item:hover img {
+  transform: scale(1.1); /* Slightly enlarge the icon */
+}
+
+.icon-item:hover p {
+  color: #000; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly enlarge the text */
 }
 
 /* Media Query for Narrow Viewports */
-@media (max-width: 768px) {
-  .icons-container {
-    gap: 4rem; /* Reduce gap for smaller screens */
-  }
-
-  .icon-item img {
-    width: 210px; /* Scale down images */
-    height: 210px;
-  }
-
-  .property-types .heading {
-    font-size: 2rem; /* Adjust heading size for smaller screens */
-  }
-}
 
 /* //////////////////////////// */
 /* WHY CHOOSE US */
