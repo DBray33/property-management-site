@@ -248,3 +248,35 @@ document.addEventListener('DOMContentLoaded', () => {
 // //////////////////////////////////
 // //////////////////////////////////
 // //////////////////////////////////
+// AVERAGE MONTHLY RENT BAR GRAPH //
+// //////////////////////////////////
+document.addEventListener('DOMContentLoaded', function () {
+  const bars = document.querySelectorAll('.bar');
+  const maxRent = 1975; // Maximum rent for scaling
+  const maxBarHeight = 300; // Maximum height in pixels
+
+  bars.forEach((bar) => {
+    const value = parseInt(bar.getAttribute('data-value'));
+    const barHeight = (value / maxRent) * maxBarHeight;
+
+    // Animate the bar height
+    bar.style.height = `${barHeight}px`;
+
+    // Animate the rent amount
+    const rentAmountElem = bar.nextElementSibling.nextElementSibling;
+    if (value > 0) {
+      let count = 0;
+      const increment = Math.ceil(value / 100);
+      const counter = setInterval(() => {
+        count += increment;
+        if (count >= value) {
+          count = value;
+          clearInterval(counter);
+        }
+        rentAmountElem.textContent = `$${count}`;
+      }, 20);
+    } else {
+      rentAmountElem.textContent = '$?';
+    }
+  });
+});
