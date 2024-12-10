@@ -1438,6 +1438,13 @@ body {
   }
 }
 
+/* Adjust margin for smaller viewports */
+@media (max-width: 588px) {
+  #bar-chart h2 {
+    margin-bottom: -5rem; /* Reduce the gap for narrower viewports */
+  }
+}
+
 .bar-title {
   margin-top: 10px;
   font-size: 1rem; /* Adjust font size to fit */

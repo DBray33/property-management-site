@@ -253,30 +253,48 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
   const bars = document.querySelectorAll('.bar');
   const maxRent = 1975; // Maximum rent for scaling
-  const maxBarHeight = 450; // Increased maximum height in pixels to make bars taller
 
-  bars.forEach((bar) => {
-    const value = parseInt(bar.getAttribute('data-value'));
-    const barHeight = (value / maxRent) * maxBarHeight; // Scale bar height proportionally to new max height
+  function adjustBarHeights() {
+    let maxBarHeight;
 
-    // Animate the bar height
-    bar.style.height = `${barHeight}px`;
-
-    // Animate the rent amount
-    const rentAmountElem = bar.nextElementSibling.nextElementSibling;
-    if (value > 0) {
-      let count = 0;
-      const increment = Math.ceil(value / 100);
-      const counter = setInterval(() => {
-        count += increment;
-        if (count >= value) {
-          count = value;
-          clearInterval(counter);
-        }
-        rentAmountElem.textContent = `$${count}`;
-      }, 20);
+    // Adjust maxBarHeight based on viewport width
+    if (window.innerWidth <= 588) {
+      maxBarHeight = 300; // Shorter bars for very small screens
+    } else if (window.innerWidth <= 768) {
+      maxBarHeight = 375; // Medium-height bars for small screens
     } else {
-      rentAmountElem.textContent = '$?';
+      maxBarHeight = 450; // Default taller bars for larger screens
     }
-  });
+
+    bars.forEach((bar) => {
+      const value = parseInt(bar.getAttribute('data-value'));
+      const barHeight = (value / maxRent) * maxBarHeight; // Scale bar height proportionally
+
+      // Animate the bar height
+      bar.style.height = `${barHeight}px`;
+
+      // Animate the rent amount
+      const rentAmountElem = bar.nextElementSibling.nextElementSibling;
+      if (value > 0) {
+        let count = 0;
+        const increment = Math.ceil(value / 100);
+        const counter = setInterval(() => {
+          count += increment;
+          if (count >= value) {
+            count = value;
+            clearInterval(counter);
+          }
+          rentAmountElem.textContent = `$${count}`;
+        }, 20);
+      } else {
+        rentAmountElem.textContent = '$?';
+      }
+    });
+  }
+
+  // Run on initial load
+  adjustBarHeights();
+
+  // Run on resize to adapt to viewport changes
+  window.addEventListener('resize', adjustBarHeights);
 });
