@@ -469,7 +469,7 @@ body {
   color: var(--primary-color);
   text-shadow: 0px 3px 0 black, /* Bottom-left */ 0px 3px 0 black,
     /* Bottom-right */ 0px 3px 0 black; /* Directly below */
-  transition: color 0.3s ease-in, text-shadow 0.3s ease-in 0.2s; /* Add transition */
+  transition: color 0.3s ease-in, text-shadow 0.3s ease-in 0.1s; /* Add transition */
 }
 
 .menu-logo a:hover {
@@ -1141,7 +1141,7 @@ body {
   color: black;
 }
 
-/* Types of Properties We Manage */
+/* What We Manage */
 .property-types {
   position: relative;
   text-align: center;
@@ -1154,6 +1154,14 @@ body {
   font-weight: bold;
   color: #000;
   margin-bottom: 20px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Start below view */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.property-types .heading.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move into view */
 }
 
 .icons-container {
@@ -1170,7 +1178,14 @@ body {
   max-width: 160px;
   text-align: center;
   text-decoration: none; /* Remove underline from links */
-  transition: transform 0.3s ease, color 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Start below view */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.icon-item.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move into view */
 }
 
 .icon-item img {
@@ -1203,15 +1218,23 @@ body {
 /* WHY CHOOSE US Section */
 .why-choose-us {
   text-align: center;
-  padding: 40px 20px; /* Keep consistent padding */
+  padding: 40px 20px;
   background-color: black;
-  height: 120vh; /* Dynamically adjust height based on content */
-  position: relative; /* Ensure proper stacking context */
-  overflow: visible; /* Prevent clipping if there’s accidental overflow */
+  min-height: auto; /* Let content determine height */
+  position: relative;
+  overflow: hidden; /* Prevent accidental overflow */
+  margin-bottom: 0;
+  padding-bottom: 2rem; /* Adds space below */
 }
 
 .why-choose-us h1 {
   font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff; /* Change to white for contrast against the black background */
+}
+
+.why-choose-us h2 {
+  font-size: 1.2rem;
   margin-bottom: 40px;
   color: #fff; /* Change to white for contrast against the black background */
 }
@@ -1227,30 +1250,45 @@ body {
   .why-choose-us .card-grid {
     grid-template-columns: 1fr; /* 1 card per row on smaller screens */
   }
+}
 
-  .why-choose-us {
-    height: 300vh;
+@media (max-width: 1070px) and (min-width: 967px) {
+  .why-choose-us .card-back p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 967px) and (min-width: 769px) {
+  .why-choose-us .card-back p {
+    font-size: 0.78rem;
   }
 }
 
 /* Card Styles */
 .why-choose-us .card {
   perspective: 1000px; /* Enables 3D effect */
+  position: relative; /* Keep card in place */
   width: 100%;
   height: 300px; /* Fixed height for each card */
-  position: relative;
+}
+
+.why-choose-us .card-inner {
+  position: relative; /* Ensure front and back align */
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Enables 3D flipping */
+  transition: transform 0.6s ease-in-out; /* Smooth flip animation */
 }
 
 /* Front and Back Styling */
 .why-choose-us .card-front,
 .why-choose-us .card-back {
-  position: absolute;
+  position: absolute; /* Stacked within the card */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-  transform-style: preserve-3d; /* Enables 3D flip */
+  backface-visibility: hidden; /* Hide the back when not flipped */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1259,18 +1297,14 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.6s ease-in-out;
   border: 2px solid var(--primary-color); /* Add a border with primary color */
 }
 
-/* Front Side */
 .why-choose-us .card-front {
   background-color: #000;
   color: #fff;
-  transform: rotateX(0deg); /* Initial state for the front */
 }
 
-/* Back Side */
 .why-choose-us .card-back {
   background-color: #333;
   color: #fff;
@@ -1278,12 +1312,8 @@ body {
 }
 
 /* Hover Flip Effect */
-.why-choose-us .card:hover .card-front {
-  transform: rotateX(-180deg); /* Flips the front vertically */
-}
-
-.why-choose-us .card:hover .card-back {
-  transform: rotateX(0deg); /* Flips the back to the front */
+.why-choose-us .card:hover .card-inner {
+  transform: rotateX(180deg); /* Flips the card */
 }
 
 /* Icon and Heading Styles */
@@ -1296,15 +1326,12 @@ body {
   font-size: 1.5rem;
 }
 
-.why-choose-us .card-back p {
-  font-size: 1rem;
-}
-
 /* /////////////////////////////////////////// */
 /* FEATURED LISTINGS SECTION ///////////////// */
 .featured-listings {
   position: relative;
   background-color: white;
+  margin-top: 0; /* Ensure no gap overlaps */
   padding-top: 2rem;
   margin-bottom: 1rem;
 }
