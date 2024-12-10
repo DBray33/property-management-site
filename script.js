@@ -1,204 +1,159 @@
-// //////////////////////////////////
-// EXPANDING CARDS //////////////////
-const featuredListingsSection = document.querySelector('.featured-listings');
-const containers = featuredListingsSection.querySelectorAll('.container');
-
-containers.forEach((container) => {
-  const panels = container.querySelectorAll('.panel');
-
-  panels.forEach((panel) => {
-    panel.addEventListener('click', (event) => {
-      event.stopPropagation(); // Prevent the document click listener from triggering
-      resetInactiveContainers(container); // Reset all other containers
-      handleActivePanel(container, panel); // Handle the clicked panel in the active container
-    });
-  });
-});
-
-function handleActivePanel(container, clickedPanel) {
-  const panels = container.querySelectorAll('.panel');
-
-  panels.forEach((panel) => {
-    if (panel === clickedPanel) {
-      panel.classList.add('active'); // Enlarge the clicked panel
-    } else {
-      panel.classList.remove('active'); // Collapse all other panels in the same container
-    }
-  });
-}
-
-function resetInactiveContainers(activeContainer) {
-  containers.forEach((container) => {
-    if (container !== activeContainer) {
-      const panels = container.querySelectorAll('.panel');
-      panels.forEach((panel) => panel.classList.remove('active')); // Collapse all panels
-      panels[0].classList.add('active'); // Expand the first panel
-    }
-  });
-}
-
-// Add a listener for clicks on the document
-document.addEventListener('click', () => {
-  containers.forEach((container) => {
-    const panels = container.querySelectorAll('.panel');
-    panels.forEach((panel) => panel.classList.remove('active')); // Collapse all panels
-    panels[0].classList.add('active'); // Expand the first panel in each container
-  });
-});
-
-// //////////////////////////////////
-// NAVBAR ///////////////////////////
-
-document.addEventListener('DOMContentLoaded', () => {
-  const navbar = document.querySelector('#navbar');
-  const hamburgerIcon = document.querySelector('.hamburger-icon');
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const closeMenuIcon = document.querySelector('.close-menu-icon');
-
-  // Show navbar after scrolling down 80px for larger screens
-  const handleScroll = () => {
-    if (window.innerWidth > 800) {
-      if (window.scrollY > 80) {
-        navbar.classList.add('visible');
-      } else {
-        navbar.classList.remove('visible');
-      }
-    }
-  };
-
-  // Toggle hamburger menu
-  hamburgerIcon.addEventListener('click', () => {
-    hamburgerMenu.classList.add('open');
-  });
-
-  // Close menu when close button is clicked
-  closeMenuIcon.addEventListener('click', () => {
-    hamburgerMenu.classList.remove('open');
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (event) => {
-    if (
-      !hamburgerMenu.contains(event.target) &&
-      !hamburgerIcon.contains(event.target) &&
-      !closeMenuIcon.contains(event.target)
-    ) {
-      hamburgerMenu.classList.remove('open');
-    }
-  });
-
-  // Listen for scroll and resize events
-  window.addEventListener('scroll', handleScroll);
-  window.addEventListener('resize', handleScroll);
-});
-
-// //////////////////////////////////
-// HEADER ///////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('#header');
-  let lastScrollY = window.scrollY;
+  if (header) {
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY === 0) {
+        header.classList.remove('hidden'); // Show header when at the top of the page
+      } else {
+        header.classList.add('hidden'); // Hide header when scrolling down
+      }
+    });
+  }
+});
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+// NAVBAR FUNCTIONALITY
+const navbar = document.querySelector('#navbar');
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const closeMenuIcon = document.querySelector('.close-menu-icon');
 
-    if (currentScrollY > 80) {
-      header.classList.add('hidden'); // Hide the header
+if (navbar) {
+  // Show navbar after scrolling
+  const handleScroll = () => {
+    if (window.scrollY > 80) {
+      navbar.classList.add('visible');
     } else {
-      header.classList.remove('hidden'); // Show the header
+      navbar.classList.remove('visible');
     }
+  };
+  window.addEventListener('scroll', handleScroll);
 
-    lastScrollY = currentScrollY;
-  });
-});
+  // Hamburger menu toggle
+  if (hamburgerIcon && hamburgerMenu && closeMenuIcon) {
+    hamburgerIcon.addEventListener('click', () => {
+      hamburgerMenu.classList.add('open');
+    });
 
-// //////////////////////////////////
-// SITE LOGO ///////////////////////////
-// Animation for when
-document.addEventListener('DOMContentLoaded', () => {
-  const logo = document.getElementById('site-logo'); // Ensure this ID matches the logo element
+    closeMenuIcon.addEventListener('click', () => {
+      hamburgerMenu.classList.remove('open');
+    });
 
-  logo.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent immediate navigation
-    logo.classList.add('clicked'); // Add clicked class
+    document.addEventListener('click', (event) => {
+      if (
+        !hamburgerMenu.contains(event.target) &&
+        !hamburgerIcon.contains(event.target) &&
+        !closeMenuIcon.contains(event.target)
+      ) {
+        hamburgerMenu.classList.remove('open');
+      }
+    });
+  }
+}
 
-    // Delay navigation until the animation completes
+// SITE LOGO ANIMATION
+const siteLogo = document.querySelector('.site-logo');
+if (siteLogo) {
+  siteLogo.addEventListener('click', (event) => {
+    event.preventDefault();
+    siteLogo.classList.add('clicked');
     setTimeout(() => {
-      window.location.href = logo.getAttribute('href'); // Navigate after animation
-    }, 1000); // Match animation duration (1s)
+      window.location.href = siteLogo.getAttribute('href');
+    }, 500); // Adjust duration to match animation
   });
-});
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-  const logo = document.querySelector('.site-logo');
+// FEATURED LISTINGS FUNCTIONALITY
+const featuredListingsSection = document.querySelector('.featured-listings');
+if (featuredListingsSection) {
+  const containers = featuredListingsSection.querySelectorAll('.container');
+  containers.forEach((container) => {
+    const panels = container.querySelectorAll('.panel');
 
-  logo.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    logo.classList.add('clicked'); // Add the clicked class
-
-    // Delay navigation until animation completes
-    setTimeout(() => {
-      window.location.href = logo.getAttribute('href'); // Navigate to the link
-    }, 500); // Match the transition duration (0.5s)
+    panels.forEach((panel) => {
+      panel.addEventListener('click', (event) => {
+        event.stopPropagation();
+        resetInactiveContainers(container);
+        handleActivePanel(container, panel);
+      });
+    });
   });
-});
 
-// //////////////////////////////////
-// HERO /////////////////////////////
-document.addEventListener('DOMContentLoaded', () => {
-  const carouselImages = document.querySelector('.carousel-images');
+  const handleActivePanel = (container, clickedPanel) => {
+    const panels = container.querySelectorAll('.panel');
+    panels.forEach((panel) => {
+      if (panel === clickedPanel) {
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+      }
+    });
+  };
+
+  const resetInactiveContainers = (activeContainer) => {
+    containers.forEach((container) => {
+      if (container !== activeContainer) {
+        const panels = container.querySelectorAll('.panel');
+        panels.forEach((panel) => panel.classList.remove('active'));
+        panels[0].classList.add('active');
+      }
+    });
+  };
+
+  document.addEventListener('click', () => {
+    containers.forEach((container) => {
+      const panels = container.querySelectorAll('.panel');
+      panels.forEach((panel) => panel.classList.remove('active'));
+      panels[0].classList.add('active');
+    });
+  });
+}
+
+// HERO CAROUSEL FUNCTIONALITY
+const carouselImages = document.querySelector('.carousel-images');
+if (carouselImages) {
   const images = document.querySelectorAll('.carousel-images img');
   const totalImages = images.length;
-
   let currentIndex = 0;
   let interval;
 
-  // Clone the first image and append it to the end for seamless looping
+  // Clone the first image for seamless looping
   const firstImageClone = images[0].cloneNode(true);
   carouselImages.appendChild(firstImageClone);
 
-  // Function to update the carousel
-  function updateCarousel() {
+  const updateCarousel = () => {
     currentIndex++;
     carouselImages.style.transition = 'transform 1s ease-in-out';
     carouselImages.style.transform = `translateX(-${currentIndex * 100}vw)`;
 
-    // Loop back to the first image seamlessly
     if (currentIndex === totalImages) {
       setTimeout(() => {
-        carouselImages.style.transition = 'none'; // Disable transition
+        carouselImages.style.transition = 'none';
         carouselImages.style.transform = 'translateX(0)';
-        currentIndex = 0; // Reset index
-      }, 1000); // Match transition duration
+        currentIndex = 0;
+      }, 1000);
     }
-  }
+  };
 
-  // Automatically slide every 7 seconds
-  function startCarousel() {
+  const startCarousel = () => {
     interval = setInterval(updateCarousel, 5000);
-  }
+  };
 
-  // Stop the carousel
-  function stopCarousel() {
+  const stopCarousel = () => {
     clearInterval(interval);
-  }
+  };
 
-  // Ensure the carousel stays aligned when the viewport is resized
-  function handleResize() {
+  window.addEventListener('resize', () => {
     stopCarousel();
-    carouselImages.style.transition = 'none'; // Disable transition during resize
+    carouselImages.style.transition = 'none';
     carouselImages.style.transform = `translateX(-${currentIndex * 100}vw)`;
     startCarousel();
-  }
-
-  // Listen for resize events
-  window.addEventListener('resize', handleResize);
+  });
 
   startCarousel();
-});
+}
 
-// WELCOME //////////////////////////
-// //////////////////////////////////
-// Handle button clicks to flip the card
+// WELCOME CARD FLIP FUNCTIONALITY
 document.querySelectorAll('.flip-button').forEach((button) => {
   button.addEventListener('click', (e) => {
     e.stopPropagation(); // Prevent the click event from propagating to the document
@@ -207,7 +162,6 @@ document.querySelectorAll('.flip-button').forEach((button) => {
   });
 });
 
-// Handle clicks outside the card to reset flip
 document.addEventListener('click', (e) => {
   document.querySelectorAll('.card.flipped').forEach((flippedCard) => {
     if (!flippedCard.contains(e.target)) {
@@ -216,64 +170,41 @@ document.addEventListener('click', (e) => {
   });
 });
 
-// WHAT WE MANAGE ///////////////////
-// //////////////////////////////////
-document.addEventListener('DOMContentLoaded', () => {
-  const observerOptions = {
-    root: null, // Use the viewport as the root
-    rootMargin: '0px',
-    threshold: 0.2, // Trigger when 10% of the element is visible
-  };
+// SCROLL ANIMATION FOR "WHAT WE MANAGE"
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.2, // Trigger when 20% of the element is visible
+};
 
-  const callback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible'); // Add 'visible' class when in view
-        observer.unobserve(entry.target); // Stop observing once animated
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(callback, observerOptions);
-
-  // Observe heading and icons
-  const targets = document.querySelectorAll('.heading, .icon-item');
-  targets.forEach((target) => observer.observe(target));
-});
-// //////////////////////////////////
-// //////////////////////////////////
-// //////////////////////////////////
-// //////////////////////////////////
-// //////////////////////////////////
-// //////////////////////////////////
-// //////////////////////////////////
-// //////////////////////////////////
-// AVERAGE MONTHLY RENT BAR GRAPH //
-// //////////////////////////////////
-document.addEventListener('DOMContentLoaded', function () {
-  const bars = document.querySelectorAll('.bar');
-  const maxRent = 1975; // Maximum rent for scaling
-
-  function adjustBarHeights() {
-    let maxBarHeight;
-
-    // Adjust maxBarHeight based on viewport width
-    if (window.innerWidth <= 588) {
-      maxBarHeight = 300; // Shorter bars for very small screens
-    } else if (window.innerWidth <= 768) {
-      maxBarHeight = 375; // Medium-height bars for small screens
-    } else {
-      maxBarHeight = 450; // Default taller bars for larger screens
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible'); // Add 'visible' class when in view
+      observer.unobserve(entry.target); // Stop observing once animated
     }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+const targets = document.querySelectorAll('.heading, .icon-item');
+targets.forEach((target) => observer.observe(target));
+
+// RENTAL BAR CHART FUNCTIONALITY
+const bars = document.querySelectorAll('.bar');
+if (bars.length > 0) {
+  const maxRent = 1975;
+
+  const adjustBarHeights = () => {
+    let maxBarHeight =
+      window.innerWidth <= 588 ? 300 : window.innerWidth <= 768 ? 375 : 450;
 
     bars.forEach((bar) => {
       const value = parseInt(bar.getAttribute('data-value'));
-      const barHeight = (value / maxRent) * maxBarHeight; // Scale bar height proportionally
-
-      // Animate the bar height
+      const barHeight = (value / maxRent) * maxBarHeight;
       bar.style.height = `${barHeight}px`;
 
-      // Animate the rent amount
       const rentAmountElem = bar.nextElementSibling.nextElementSibling;
       if (value > 0) {
         let count = 0;
@@ -290,11 +221,8 @@ document.addEventListener('DOMContentLoaded', function () {
         rentAmountElem.textContent = '$?';
       }
     });
-  }
+  };
 
-  // Run on initial load
   adjustBarHeights();
-
-  // Run on resize to adapt to viewport changes
   window.addEventListener('resize', adjustBarHeights);
-});
+}

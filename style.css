@@ -251,6 +251,11 @@ body {
   opacity: 0;
 }
 
+#header.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 #header .container {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -1622,6 +1627,138 @@ body {
   background-color: #444;
   color: var(--primary-color);
 }
+
+/* BLOG SECTION /////////////////////////// */
+/* //////////////////////////////////////// */
+/* Blog Preview Section */
+#blog-preview {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+#blog-preview h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.blog-link {
+  display: inline-block; /* Restrict to content width */
+  text-align: center; /* Center the text within the link */
+  margin: 1rem auto; /* Center the link and add spacing */
+  padding: 0.8rem 1.5rem; /* Padding for a button-like appearance */
+  font-size: 1rem; /* Adjust font size */
+  font-weight: bold; /* Bold text */
+  color: white; /* Text color */
+  background: linear-gradient(
+    to bottom,
+    #4a90e2,
+    #0254ff
+  ); /* Default gradient using your secondary color */
+  border: none; /* Remove any default borders */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+.blog-link:hover {
+  background: linear-gradient(
+    to bottom,
+    #0254ff,
+    #003bb3
+  ); /* Darker gradient for hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.blog-link:active {
+  transform: scale(0.95); /* Shrink slightly when clicked */
+}
+
+.blog-link:active {
+  transform: scale(0.95); /* Shrink slightly when clicked */
+}
+
+#blog-preview p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+#subscribe-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#subscribe-form input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#subscribe-form button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to bottom, #ffd251, #ffb902);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#subscribe-form button:hover {
+  background: linear-gradient(to bottom, #ffb902, #e6a802);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.blog-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-item h3 {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.blog-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.blog-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+}
 /* /////////////////// */
 /* Contact */
 /* Contact */
@@ -1684,4 +1821,222 @@ body {
 
 .contact button:hover {
   background-color: #444;
+}
+
+/* FOOTER ////////////////////////////// */
+/* ///////////////////////////////////// */
+/* Footer Section */
+#footer {
+  background-color: black;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Main Footer Information */
+.footer-main h2 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.footer-main p {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+.footer-main .menu-logo {
+  display: none; /* Hidden by default */
+}
+
+.footer-main .menu-logo a {
+  font-size: 6rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+.footer-main .menu-logo a:hover {
+  font-size: 6rem;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 30px var(--primary-color);
+  transition: all 0.2s ease-in-out; /* Quick and smooth transition */
+}
+
+.footer-main .social-links {
+  margin-top: 20px;
+}
+
+.footer-main .social-links a {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-main .social-links a:hover {
+  color: #fff;
+}
+
+/* Footer Grid */
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 2rem;
+}
+
+.footer-item {
+  flex: 1;
+  min-width: 200px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.footer-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-item ul li {
+  margin-bottom: 5px;
+}
+
+.footer-item ul li a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-item ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+  .footer-main h2 {
+    display: none; /* Hide title */
+  }
+
+  .footer-main .menu-logo {
+    display: block; /* Show menu logo */
+    margin-bottom: 20px;
+  }
+
+  .footer-grid {
+    justify-content: center; /* Center grid items */
+  }
+
+  .footer-item {
+    flex: 1 1 calc(50% - 2rem); /* Two items per row */
+    max-width: calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-item {
+    flex: 1 1 100%; /* One item per row */
+    max-width: 100%;
+  }
+}
+
+/* //////////////////////////////////////// */
+/* //////////////////////////////////////// */
+/* //////////////////////////////////////// */
+/* BLOG PAGE ///////////////////////////////*/
+/* Blog Page Styling */
+#blog-page {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#blog-page h1 {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+#blog-page p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+}
+
+.blog-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.blog-content h2 {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.blog-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(to bottom, #0254ff, #003bb3);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read-more:hover {
+  background: linear-gradient(to bottom, #003bb3, #002080);
+  transform: scale(1.05);
 }
