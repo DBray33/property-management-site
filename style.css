@@ -336,7 +336,7 @@ body {
 }
 
 /* Media Query for Viewports Smaller than 800px */
-@media (max-width: 860px) {
+@media (max-width: 941px) {
   #header {
     display: none; /* Hide the default header */
   }
@@ -610,7 +610,7 @@ body {
 }
 
 /* Media Query for Viewports Smaller than 800px */
-@media (max-width: 860px) {
+@media (max-width: 941px) {
   #navbar {
     display: block; /* Always visible */
     top: 0;
@@ -634,6 +634,12 @@ body {
   width: 100%;
   height: 88vh;
   overflow: hidden;
+}
+
+@media (max-width: 941px) {
+  #hero {
+    margin-top: 61px;
+  }
 }
 
 .hero-content {
