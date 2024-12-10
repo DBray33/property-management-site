@@ -253,11 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
   const bars = document.querySelectorAll('.bar');
   const maxRent = 1975; // Maximum rent for scaling
-  const maxBarHeight = 300; // Maximum height in pixels
+  const maxBarHeight = 450; // Increased maximum height in pixels to make bars taller
 
   bars.forEach((bar) => {
     const value = parseInt(bar.getAttribute('data-value'));
-    const barHeight = (value / maxRent) * maxBarHeight;
+    const barHeight = (value / maxRent) * maxBarHeight; // Scale bar height proportionally to new max height
 
     // Animate the bar height
     bar.style.height = `${barHeight}px`;

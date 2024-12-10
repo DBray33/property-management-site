@@ -1390,7 +1390,7 @@ body {
   display: flex;
   justify-content: space-around; /* Ensures bars are evenly spaced */
   align-items: flex-end; /* Align bars to bottom */
-  height: 400px; /* Container height */
+  height: 600px; /* Container height */
   gap: 1rem; /* Space between bars */
 }
 
@@ -1407,13 +1407,28 @@ body {
 .bar {
   width: 200px;
   height: 0; /* Initial height for animation */
-  background: var(--primary-color);
-  transition: height 2s ease-out, width 0.3s ease; /* Smooth width adjustment */
-  border-radius: 16px;
+  background: linear-gradient(
+    to top,
+    #000 0px,
+    #000 15px,
+    #ffb902 200px,
+    #ffd251 300px
+  ); /* Extended black gradient */
+  transition: height 2s ease-out, width 0.3s ease; /* Smooth animation for height and width */
+  border-radius: 16px; /* Rounded corners */
 }
 
 /* Narrower bars for smaller viewports */
 @media (max-width: 1100px) {
+  .bar {
+    width: 100px; /* Reduce width */
+  }
+
+  .bar-wrapper {
+    max-width: 60px; /* Match the bar's width */
+  }
+}
+@media (max-width: 588px) {
   .bar {
     width: 60px; /* Reduce width */
   }
@@ -1428,10 +1443,8 @@ body {
   font-size: 1rem; /* Adjust font size to fit */
   color: var(--secondary-color);
   text-align: center;
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflow if necessary */
-  text-overflow: ellipsis; /* Add ellipsis if the text overflows */
-  max-width: 120px; /* Limit the width to match the bar */
+  word-wrap: break-word; /* Ensure long words break to the next line */
+  max-width: 70px; /* Limit the width to match the bar */
 }
 
 .bar-amount {
@@ -1440,6 +1453,85 @@ body {
   font-weight: bold;
   color: #4caf50;
   text-align: center;
+}
+/* End Bars */
+#rental-analysis-form {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: black;
+}
+
+#rental-analysis-form h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+#rental-analysis-form p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+#rental-analysis-form form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  align-self: flex-end;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to bottom, #ffd251, #ffb902);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:hover {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: black;
+}
+
+.submit-button:active {
+  transform: scale(0.9);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* /////////////////////////////////////////// */
