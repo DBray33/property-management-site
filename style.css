@@ -148,6 +148,18 @@ body {
   margin-top: -7rem;
 }
 
+/* Address Overlay */
+.address-overlay {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  margin: 1rem auto -1rem;
+  width: fit-content;
+  border-radius: 8px;
+}
+
 .featured-listings .container {
   display: flex;
   flex-direction: row;
@@ -1400,7 +1412,7 @@ body {
 }
 
 #bar-chart h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 3.5rem;
   color: WHITE;
 }
@@ -1606,6 +1618,12 @@ body {
   transition: all 200ms ease-in;
 }
 
+@media (max-width: 768px) and (min-height: 500px) {
+  .featured-listings .panel {
+    height: 20vh;
+  }
+}
+
 .featured-listings .panel.active {
   flex: 5;
 }
@@ -1658,6 +1676,7 @@ body {
 
 /* Common Hero Button Style */
 .hero-button {
+  margin: 0;
   display: inline-block;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -1687,8 +1706,28 @@ body {
 }
 
 /* Subscribe Button - Orange/Yellow Gradient */
-#subscribe-form button {
+#subscribe-form {
+  display: flex;
+  justify-content: center; /* Center the form */
+  align-items: center; /* Align items vertically */
+  gap: 1rem; /* Spacing between input and button */
+  margin-bottom: 2rem;
+}
+
+#subscribe-form input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 300px;
+  height: 40px; /* Match the button height */
+  line-height: 1.2; /* Adjust to center text vertically */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding and border in height */
+}
+
+#subscribe-form .hero-button {
   padding: 0.8rem 1.5rem;
+  height: 40px; /* Match the input height */
   font-size: 1rem;
   font-weight: bold;
   color: white;
@@ -1700,10 +1739,10 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-#subscribe-form button:hover {
+#subscribe-form .hero-button:hover {
+  color: black;
   background: linear-gradient(
     to bottom,
     #ffb902,
@@ -1711,20 +1750,15 @@ body {
   ); /* Darker orange on hover */
 }
 
-/* Subscribe Form */
-#subscribe-form {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+#subscribe-form .hero-button:hover {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: black;
 }
 
-#subscribe-form input {
-  padding: 0.8rem;
-  font-size: 1rem;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.#subscribe-form .hero-button:active {
+  transform: scale(0.9);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 #blog-preview p {
@@ -1894,6 +1928,15 @@ body {
   text-decoration: none;
   font-weight: bold;
   padding: 2rem;
+}
+
+.footer-main .menu-logo a:hover {
+  font-size: 6rem;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 30px var(--primary-color);
+  transition: all 0.2s ease-in-out; /* Quick and smooth transition */
 }
 
 .footer-main .social-links {
