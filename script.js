@@ -1,3 +1,5 @@
+// ///////////////////////////////////
+// HEADER FUNCTIONALITY //////////////
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('#header');
   if (header) {
@@ -12,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// NAVBAR FUNCTIONALITY
+// //////////////////////////////////////
+// NAVBAR FUNCTIONALITY ////////////////
 const navbar = document.querySelector('#navbar');
 const hamburgerIcon = document.querySelector('.hamburger-icon');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -51,7 +54,8 @@ if (navbar) {
   }
 }
 
-// SITE LOGO ANIMATION
+// //////////////////////////////////////
+// SITE LOGO ANIMATION /////////////////
 const siteLogo = document.querySelector('.site-logo');
 if (siteLogo) {
   siteLogo.addEventListener('click', (event) => {
@@ -63,7 +67,8 @@ if (siteLogo) {
   });
 }
 
-// FEATURED LISTINGS FUNCTIONALITY
+// //////////////////////////////////////
+// FEATURED LISTINGS FUNCTIONALITY /////
 const featuredListingsSection = document.querySelector('.featured-listings');
 if (featuredListingsSection) {
   const containers = featuredListingsSection.querySelectorAll('.container');
@@ -109,6 +114,7 @@ if (featuredListingsSection) {
   });
 }
 
+// //////////////////////////////////////
 // HERO CAROUSEL FUNCTIONALITY
 const carouselImages = document.querySelector('.carousel-images');
 if (carouselImages) {
@@ -333,4 +339,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
   blogItems.forEach((item) => observer.observe(item));
+});
+
+// //////////////////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const blogPosts = document.querySelectorAll('.blog-animate');
+  blogPosts.forEach((post) => {
+    setTimeout(() => {
+      post.classList.add('loaded');
+    }, 200); // Delay to allow smooth animations
+  });
 });

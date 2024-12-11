@@ -1042,6 +1042,11 @@ body {
   transform: scale(1); /* Expand to full size */
 }
 
+/* Flipping state */
+.card.flipped {
+  transform: rotateY(180deg); /* Flip horizontally */
+}
+
 .card-front,
 .card-back {
   position: absolute;
@@ -1056,12 +1061,23 @@ body {
   align-items: center;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
+/* Front of the card */
 .card-front {
   color: white;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Back of the card */
+.card-back {
+  background-color: transparent;
+  transform: rotateY(180deg); /* Initially hidden with a horizontal flip */
+  color: #333; /* Darker text for better contrast */
+  padding: 1rem;
+
+  border-radius: 0.5rem;
 }
 
 /* Background with Dark Transparent Overlay for Prospective Owners Card */
@@ -1078,16 +1094,6 @@ body {
     url('https://i.postimg.cc/SK0mprqh/i-Stock-943147634.jpg') no-repeat center
       center;
   background-size: cover;
-}
-
-/* Back of the Card */
-.card-back {
-  background-color: transparent;
-  transform: rotateY(180deg);
-  color: #fff; /* White text for contrast */
-  padding: 0;
-  box-shadow: none;
-  border: transparent;
 }
 
 .card-front h1,
@@ -2023,6 +2029,35 @@ body {
 .blog-post:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the link wraps the entire blog post */
+.blog-post-link {
+  display: block; /* Make the entire block clickable */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  border-radius: 10px; /* Match the blog-post border-radius */
+  overflow: hidden; /* Match the blog-post overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Retain hover effect on the blog post */
+.blog-post-link:hover .blog-post {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Initial state for animation */
+.blog-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Final state for animation */
+.blog-animate.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .blog-image {
