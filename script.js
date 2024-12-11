@@ -153,7 +153,9 @@ if (carouselImages) {
   startCarousel();
 }
 
-// WELCOME CARD FLIP FUNCTIONALITY
+// WELCOME CARD FUNCTIONALITY ////////////////////
+// ///////////////////////////////////////////////
+// FLIP CARD ON BUTTON CLICK
 document.querySelectorAll('.flip-button').forEach((button) => {
   button.addEventListener('click', (e) => {
     e.stopPropagation(); // Prevent the click event from propagating to the document
@@ -168,6 +170,30 @@ document.addEventListener('click', (e) => {
       flippedCard.classList.remove('flipped');
     }
   });
+});
+
+// Scroll animation for welcome cards
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card');
+
+  const observerOptions = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px',
+    threshold: 0.2, // Trigger when 20% of the element is visible
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible'); // Add the visible class
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  cards.forEach((card) => observer.observe(card));
 });
 
 // SCROLL ANIMATION FOR "WHAT WE MANAGE"
@@ -226,3 +252,85 @@ if (bars.length > 0) {
   adjustBarHeights();
   window.addEventListener('resize', adjustBarHeights);
 }
+
+// //////////////////////////////////////
+// BAR CHART ///////////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const bars = document.querySelectorAll('.bar');
+  const barAmounts = document.querySelectorAll('.bar-amount');
+  const barChartSection = document.getElementById('bar-chart');
+  const maxRent = 2400; // Maximum rent for scaling
+  let animationDone = false;
+
+  // Adjust bar heights and animate rent amounts
+  function animateBars() {
+    bars.forEach((bar) => {
+      const value = parseInt(bar.getAttribute('data-value'));
+      const barHeight = (value / maxRent) * 400; // Scale bar height proportionally
+
+      bar.style.height = `${barHeight}px`; // Set the height of the bar
+
+      // Animate the rent amount
+      const rentAmountElem = bar.nextElementSibling.nextElementSibling; // Target bar-amount element
+      if (value > 0) {
+        let count = 0;
+        const increment = Math.ceil(value / 100);
+        const counter = setInterval(() => {
+          count += increment;
+          if (count >= value) {
+            count = value;
+            clearInterval(counter);
+          }
+          rentAmountElem.textContent = `$${count}`;
+        }, 20);
+      } else {
+        rentAmountElem.textContent = '$?';
+      }
+    });
+  }
+
+  // Observe when the bar chart section is in view
+  const observerOptions = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px',
+    threshold: 0.3, // Trigger when 30% of the section is visible
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !animationDone) {
+        animationDone = true; // Ensure the animation runs only once
+        animateBars();
+        observer.unobserve(barChartSection); // Stop observing once animation starts
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  observer.observe(barChartSection);
+});
+
+// //////////////////////////////////////
+// BLOG PREVIEWS ///////////////////////
+document.addEventListener('DOMContentLoaded', () => {
+  const blogItems = document.querySelectorAll('.blog-item');
+
+  const observerOptions = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px',
+    threshold: 0.2, // Trigger when 20% of the element is visible
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible'); // Add the visible class
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  blogItems.forEach((item) => observer.observe(item));
+});

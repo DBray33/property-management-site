@@ -203,14 +203,16 @@ body {
 .featured-listings .panel-button {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto; /* Allow height to adjust dynamically */
   background-color: black;
   color: white;
   border: none;
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  line-height: calc(15%);
+  line-height: 1.5; /* Adjust spacing between lines */
+  white-space: normal; /* Allow text to wrap */
+  padding: 0.5rem; /* Add some padding for better readability */
   transition: background-color 0.3s ease, color 0.3s ease;
   z-index: 2;
 }
@@ -1029,15 +1031,15 @@ body {
   max-width: 800px;
   height: 400px;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
+  opacity: 0;
+  transform: scale(0.8); /* Start slightly smaller */
+  transition: transform 1s ease, opacity 1s ease;
 }
 
-.renters-card.flipped {
-  transform: rotateY(180deg);
-}
-
-.owners-card.flipped {
-  transform: rotateY(-180deg);
+/* Visible state: cards expand into place */
+.card.visible {
+  opacity: 1; /* Fully visible */
+  transform: scale(1); /* Expand to full size */
 }
 
 .card-front,
@@ -1065,18 +1067,16 @@ body {
 /* Background with Dark Transparent Overlay for Prospective Owners Card */
 .owners-card .card-front {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    /* Dark overlay */
-      url('https://i.postimg.cc/Dyt9WwNQ/i-Stock-1481616216.jpg') no-repeat
-      center center;
+    url('https://i.postimg.cc/Dyt9WwNQ/i-Stock-1481616216.jpg') no-repeat center
+      center;
   background-size: cover;
 }
 
 /* Background with Dark Transparent Overlay for Prospective Renters Card */
 .renters-card .card-front {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    /* Dark overlay */
-      url('https://i.postimg.cc/SK0mprqh/i-Stock-943147634.jpg') no-repeat
-      center center;
+    url('https://i.postimg.cc/SK0mprqh/i-Stock-943147634.jpg') no-repeat center
+      center;
   background-size: cover;
 }
 
@@ -1401,7 +1401,7 @@ body {
   display: flex;
   justify-content: space-around; /* Ensures bars are evenly spaced */
   align-items: flex-end; /* Align bars to bottom */
-  height: 600px; /* Container height */
+  height: 575px; /* Container height */
   gap: 1rem; /* Space between bars */
 }
 
@@ -1645,52 +1645,64 @@ body {
 
 #blog-preview h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
   color: var(--secondary-color);
 }
 
-.blog-link {
-  display: inline-block; /* Restrict to content width */
-  text-align: center; /* Center the text within the link */
-  margin: 1rem auto; /* Center the link and add spacing */
-  padding: 0.8rem 1.5rem; /* Padding for a button-like appearance */
-  font-size: 1rem; /* Adjust font size */
-  font-weight: bold; /* Bold text */
-  color: white; /* Text color */
+/* Common Hero Button Style */
+.hero-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Blog Button - Blue Gradient */
+.hero-button.blog-button {
+  background: linear-gradient(to bottom, #007bff, #0056b3); /* Blue gradient */
+  margin-bottom: 2rem;
+}
+
+.hero-button.blog-button:hover {
   background: linear-gradient(
     to bottom,
-    #4a90e2,
-    #0254ff
-  ); /* Default gradient using your secondary color */
-  border: none; /* Remove any default borders */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    #0056b3,
+    #003d80
+  ); /* Darker blue on hover */
 }
 
-.blog-link:hover {
+/* Subscribe Button - Orange/Yellow Gradient */
+#subscribe-form button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
   background: linear-gradient(
     to bottom,
-    #0254ff,
-    #003bb3
-  ); /* Darker gradient for hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+    #ffd251,
+    #ffb902
+  ); /* Orange gradient */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.blog-link:active {
-  transform: scale(0.95); /* Shrink slightly when clicked */
+#subscribe-form button:hover {
+  background: linear-gradient(
+    to bottom,
+    #ffb902,
+    #e6a802
+  ); /* Darker orange on hover */
 }
 
-.blog-link:active {
-  transform: scale(0.95); /* Shrink slightly when clicked */
-}
-
-#blog-preview p {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
+/* Subscribe Form */
 #subscribe-form {
   display: flex;
   justify-content: center;
@@ -1706,22 +1718,13 @@ body {
   border-radius: 5px;
 }
 
-#subscribe-form button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(to bottom, #ffd251, #ffb902);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+#blog-preview p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
 }
 
-#subscribe-form button:hover {
-  background: linear-gradient(to bottom, #ffb902, #e6a802);
-}
-
+/* Blog Grid */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1734,7 +1737,25 @@ body {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(50px); /* Start slightly below */
+  opacity: 0; /* Start invisible */
+  transition: transform 0.6s ease, opacity 0.6s ease, background-color 0.3s ease; /* Add smooth transition for background color */
+}
+
+.blog-item.visible {
+  transform: translateY(0); /* Move to the default position */
+  opacity: 1; /* Fully visible */
+}
+
+.blog-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0; /* Faint gray background on hover */
+}
+
+.blog-item a {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Ensures the text color matches the surrounding content */
 }
 
 .blog-item h3 {
