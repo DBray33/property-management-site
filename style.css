@@ -237,6 +237,7 @@ body {
 /* ////////////////////////// */
 /*  HEADER ////////////////////*/
 /* Default Header Style */
+/* HEADER //////////////////// */
 #header {
   position: fixed;
   top: 0;
@@ -245,10 +246,10 @@ body {
   background-color: white;
   color: black;
   display: flex;
-  align-items: flex-end; /* Align items to the bottom */
+  align-items: flex-end;
   justify-content: center;
   z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hiding/showing */
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .header-logo {
@@ -272,7 +273,7 @@ body {
 
 #header .container {
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 1200px;
@@ -286,25 +287,95 @@ body {
   list-style: none;
 }
 
+.header-nav .nav-list > li {
+  position: relative;
+}
+
 .header-nav .nav-list a {
-  position: relative; /* Required for pseudo-elements */
+  position: relative;
   text-decoration: none;
   letter-spacing: 0.9px;
   color: black;
   font-size: 1rem;
   font-weight: 700;
   padding: 0.4rem 0.8rem 0.2rem;
-  border-radius: 20px; /* Ensures the shape remains even without hover */
-  box-sizing: border-box; /* Makes padding included in size */
-  overflow: hidden; /* Ensures the background effect stays within the link boundaries */
-  transition: color 0.3s; /* Smooth text color transition */
-  border-right: 1px solid lightgray; /* Vertical border */
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: color 0.3s;
 }
 
+.header-nav .nav-list a:last-child {
+  border-right: none;
+}
+
+.header-nav .nav-list a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(2, 84, 255, 0.2);
+  border-radius: inherit;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.header-nav .nav-list a:hover::before {
+  transform: scale(1);
+}
+
+/* Dropdown Menu Styles */
+.header-nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px); /* Start slightly above */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.header-nav .nav-list > li:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Slide down */
+}
+
+.header-nav .dropdown-menu li {
+  padding: 0;
+}
+
+/* Dropdown Menu Links */
+.header-nav .dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.header-nav .dropdown-menu li a:hover {
+  background-color: rgba(2, 84, 255, 0.2); /* Maintain hover background color */
+  color: black;
+  border-radius: 0; /* Remove border radius on hover */
+}
+
+/* Phone Number */
 .phone-number {
   position: absolute;
-  top: 10px; /* Position at the top */
-  right: 20px; /* Align to the right */
+  top: 10px;
+  right: 20px;
   font-size: 1.5rem;
   font-weight: 600;
   color: black;
@@ -317,44 +388,23 @@ body {
 }
 
 .phone-number a:hover {
-  color: var(--primary-color); /* Example accent color */
+  color: var(--primary-color);
 }
 
 /* Media Query for Viewports Smaller than 800px */
 @media (max-width: 860px) {
   #header .phone-number {
-    display: none; /* Hide phone number on small screens */
+    display: none;
   }
 }
 
-.header-nav .nav-list a:last-child {
-  border-right: none; /* Remove border from the last link */
-}
-
-.header-nav .nav-list a::before {
-  content: ''; /* Empty content for pseudo-element */
-  position: absolute;
-  top: 0; /* Align to the top of the parent element */
-  left: 0; /* Align to the left of the parent element */
-  width: 100%; /* Cover the full width */
-  height: 100%; /* Cover the full height */
-  background-color: rgba(2, 84, 255, 0.2); /* 50% transparent blue */
-  border-radius: inherit; /* Match the parent element's border-radius */
-  transform: scale(0); /* Start small at center */
-  transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
-  z-index: -1; /* Send it behind the text */
-}
-
-.header-nav .nav-list a:hover::before {
-  transform: scale(1); /* Grow to cover the full area */
-}
-
-/* Media Query for Viewports Smaller than 800px */
 @media (max-width: 941px) {
   #header {
-    display: none; /* Hide the default header */
+    display: none;
   }
 }
+
+/* END HEADER */
 
 /* Hero Button */
 .hero-button {
@@ -396,249 +446,6 @@ body {
 
 /* //////////////////////////// */
 /* NAVBAR //////////////////////*/
-/* Navbar Style */
-/* General styles for the navbar */
-#navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: none; /* Hidden by default */
-  z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-#navbar.visible {
-  display: block; /* Show when scrolled down */
-}
-
-.navbar-content {
-  display: flex;
-  justify-content: space-between; /* Space between logo and icon */
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  height: 60px;
-}
-
-/* Hamburger Menu */
-.hamburger-icon {
-  background: none;
-  border: none;
-  font-size: 2.5rem;
-  cursor: pointer;
-  margin-left: auto; /* Pushes the icon to the far right */
-}
-
-.hamburger-menu {
-  position: fixed; /* Keep the menu fixed at the same position */
-  top: 0; /* Anchor to the top of the viewport */
-  right: -300px; /* Hidden by default */
-  height: 100%; /* Full height of the viewport */
-  width: 300px; /* Fixed width */
-  background-color: lightgray;
-  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Horizontally center child content */
-  justify-content: flex-start; /* Start content at the top */
-  transform: translateX(0);
-  transition: right 0.3s ease;
-  overflow-y: auto; /* Enable vertical scrolling if content overflows */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-.hamburger-menu.open {
-  right: 0; /* Slide in when open */
-}
-
-.menu-header {
-  width: 100%;
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Horizontally center child elements */
-  justify-content: center; /* Vertically center child elements if needed */
-  margin-top: 90px;
-  padding: 20px 0;
-}
-
-.menu-number a {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* Menu Logo /////////////////////////////////// */
-
-.menu-logo a,
-.menu-number a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Use the inherited color or explicitly set it */
-  text-align: center; /* Ensure text is centered within the element */
-  display: inline-block; /* Make it block-level to apply alignment properly */
-}
-
-.menu-logo a {
-  font-size: 5rem;
-  font-weight: bold;
-  text-decoration: none;
-  position: relative; /* For pseudo-element positioning */
-  display: inline-block; /* Ensures proper alignment */
-  overflow: hidden; /* Hide overflow during animation */
-  color: var(--primary-color);
-  text-shadow: 0px 3px 0 black, /* Bottom-left */ 0px 3px 0 black,
-    /* Bottom-right */ 0px 3px 0 black; /* Directly below */
-  transition: color 0.3s ease-in, text-shadow 0.3s ease-in 0.1s; /* Add transition */
-}
-
-.menu-logo a:hover {
-  color: black;
-  text-shadow: 0px 0px 0 var(--primary-color),
-    /* Bottom-left */ 0px 0px 0 var(--primary-color),
-    /* Bottom-right */ 0px 4px 0 var(--primary-color); /* Directly below */
-}
-
-.menu-number a:hover {
-  color: var(--primary-color); /* Change color on hover */
-}
-/* End menu logo //////////////////////////// */
-
-.menu-buttons {
-  display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  gap: 10px; /* Add space between buttons */
-  margin-top: 20px; /* Space above the buttons */
-  align-items: center; /* Center align buttons horizontally */
-}
-
-.menu-button {
-  padding: 10px 20px; /* Add padding for larger touch targets */
-  margin-bottom: 1rem;
-  font-size: 1rem; /* Adjust font size */
-  font-weight: bold; /* Bold text */
-  color: black; /* Button text color */
-  background: linear-gradient(
-    to bottom,
-    #ffd251,
-    #ffb902
-  ); /* Light to dark gradient */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Add rounded corners */
-  cursor: pointer; /* Show pointer cursor on hover */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add slight shadow for depth */
-  transition: 0.3s ease, transform 0.3s ease; /* Smooth transition */
-  display: flex; /* Use flexbox for icon and text alignment */
-  align-items: center; /* Vertically center content */
-  justify-content: center; /* Horizontally center content */
-  gap: 10px; /* Add space between icon and text */
-}
-
-.menu-button i {
-  font-size: 1.2rem; /* Adjust icon size */
-}
-
-.menu-button:hover {
-  background: linear-gradient(
-    to bottom,
-    #ffb902,
-    #e6a802
-  ); /* Slightly darker gradient on hover */
-  transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-.menu-button:active {
-  transform: scale(0.95); /* Shrink button slightly on click */
-  background: linear-gradient(
-    to bottom,
-    #e6a802,
-    #d49502
-  ); /* Darker gradient on click */
-}
-
-.menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  width: 100%; /* Ensure full-width menu items */
-}
-
-.menu-list li {
-  margin: 0; /* Remove margin between list items */
-}
-
-.menu-list a {
-  display: block;
-  width: 100%; /* Full width for links */
-  padding: 1rem; /* Padding for better touch targets */
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: black;
-  background-color: lightgray; /* Explicit default background color */
-  transition: background-color 0.5s ease-out, color 0.3s ease; /* Default unhover transition */
-  z-index: 0;
-}
-
-.menu-list a:hover {
-  background-color: var(--primary-color); /* Background color on hover */
-  color: white; /* Optional: Change text color */
-  transition: background-color 0s ease, color 0.3s ease; /* Immediate hover effect */
-}
-
-/* Ensure there is no gap between hovered backgrounds */
-.menu-list li + li {
-  margin-top: -1px; /* Overlap slightly to remove gaps */
-}
-
-/* Close Menu Icon */
-.close-menu-icon {
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 2;
-}
-
-.close-menu-icon:hover {
-  background-color: var(--primary-color);
-  transform: scale(1.1);
-}
-
-/* Push animation when clicked */
-.close-menu-icon:active {
-  transform: translateY(2px) scale(0.01); /* Simulate a "push-in" effect */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Reduce shadow for pressed effect */
-}
-
-/* Media Query for Viewports Smaller than 800px */
-@media (max-width: 941px) {
-  #navbar {
-    display: block; /* Always visible */
-    top: 0;
-  }
-
-  #navbar.visible {
-    display: block; /* Override to ensure visibility */
-  }
-
-  #header {
-    display: none; /* Hide the header for small screens */
-  }
-}
 
 /* //////////////////////////// */
 /* HERO ////////////////////////*/
@@ -1540,6 +1347,8 @@ body {
 }
 
 .form-group input {
+  font-family: 'Josefin Sans';
+
   width: 100%;
   padding: 0.8rem;
   font-size: 1rem;
@@ -1578,7 +1387,6 @@ body {
   position: relative;
   background-color: white;
   margin-top: 0; /* Ensure no gap overlaps */
-  padding-top: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -1586,12 +1394,12 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin: 1rem auto 3rem;
+  /* margin: 3rem auto 3rem; */
 }
 
 .featured-listings h1 {
   color: black;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-top: 5rem;
   margin-bottom: -1rem;
   text-align: center;
@@ -2281,4 +2089,278 @@ body {
 
 .back-to-blog:hover {
   color: #003bb3;
+}
+/* /////////////////////////////////// */
+/* /////////////////////////////////// */
+/* /////////////////////////////////// */
+/* /////////////////////////////////// */
+/* /////////////////////////////////// */
+/* /////////////////////////////////// */
+/* Navbar Style */
+/* General styles for the navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Hidden by default */
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#navbar.visible {
+  display: block; /* Show when scrolled down */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between; /* Space between logo and icon */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 60px;
+}
+
+/* Hamburger Menu */
+.hamburger-icon {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin-left: auto; /* Pushes the icon to the far right */
+}
+
+.hamburger-menu {
+  position: fixed; /* Keep the menu fixed at the same position */
+  top: 0; /* Anchor to the top of the viewport */
+  right: -300px; /* Hidden by default */
+  height: 100%; /* Full height of the viewport */
+  width: 300px; /* Fixed width */
+  background-color: lightgray;
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Horizontally center child content */
+  justify-content: flex-start; /* Start content at the top */
+  transform: translateX(0);
+  transition: right 0.3s ease;
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.hamburger-menu.open {
+  right: 0; /* Slide in when open */
+}
+
+.menu-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Horizontally center child elements */
+  justify-content: center; /* Vertically center child elements if needed */
+  margin-top: 90px;
+  padding: 20px 0;
+}
+
+.menu-number a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Menu Logo /////////////////////////////////// */
+
+.menu-logo a,
+.menu-number a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the inherited color or explicitly set it */
+  text-align: center; /* Ensure text is centered within the element */
+  display: inline-block; /* Make it block-level to apply alignment properly */
+}
+
+.menu-logo a {
+  font-size: 5rem;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative; /* For pseudo-element positioning */
+  display: inline-block; /* Ensures proper alignment */
+  overflow: hidden; /* Hide overflow during animation */
+  color: var(--primary-color);
+  text-shadow: 0px 3px 0 black, /* Bottom-left */ 0px 3px 0 black,
+    /* Bottom-right */ 0px 3px 0 black; /* Directly below */
+  transition: color 0.3s ease-in, text-shadow 0.3s ease-in 0.1s; /* Add transition */
+}
+
+.menu-logo a:hover {
+  color: black;
+  text-shadow: 0px 0px 0 var(--primary-color),
+    /* Bottom-left */ 0px 0px 0 var(--primary-color),
+    /* Bottom-right */ 0px 4px 0 var(--primary-color); /* Directly below */
+}
+
+.menu-number a:hover {
+  color: var(--primary-color); /* Change color on hover */
+}
+/* End menu logo //////////////////////////// */
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Add space between buttons */
+  margin-top: 20px; /* Space above the buttons */
+  align-items: center; /* Center align buttons horizontally */
+}
+
+.menu-button {
+  padding: 10px 20px; /* Add padding for larger touch targets */
+  margin-bottom: 1rem;
+  font-size: 1rem; /* Adjust font size */
+  font-weight: bold; /* Bold text */
+  color: black; /* Button text color */
+  background: linear-gradient(
+    to bottom,
+    #ffd251,
+    #ffb902
+  ); /* Light to dark gradient */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add slight shadow for depth */
+  transition: 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  display: flex; /* Use flexbox for icon and text alignment */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  gap: 10px; /* Add space between icon and text */
+}
+
+.menu-button i {
+  font-size: 1.2rem; /* Adjust icon size */
+}
+
+.menu-button:hover {
+  background: linear-gradient(
+    to bottom,
+    #ffb902,
+    #e6a802
+  ); /* Slightly darker gradient on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.menu-button:active {
+  transform: scale(0.95); /* Shrink button slightly on click */
+  background: linear-gradient(
+    to bottom,
+    #e6a802,
+    #d49502
+  ); /* Darker gradient on click */
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 100%; /* Ensure full-width menu items */
+}
+
+.menu-list li {
+  margin: 0; /* Remove margin between list items */
+}
+
+.menu-list a {
+  display: block;
+  width: 100%; /* Full width for links */
+  padding: 1rem; /* Padding for better touch targets */
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: black;
+  background-color: lightgray; /* Explicit default background color */
+  transition: background-color 0.5s ease-out, color 0.3s ease; /* Default unhover transition */
+  z-index: 0;
+}
+
+.menu-list a:hover {
+  background-color: var(--primary-color); /* Background color on hover */
+  color: white; /* Optional: Change text color */
+  transition: background-color 0s ease, color 0.3s ease; /* Immediate hover effect */
+}
+
+/* Ensure there is no gap between hovered backgrounds */
+.menu-list li + li {
+  margin-top: -1px; /* Overlap slightly to remove gaps */
+}
+
+/* Close Menu Icon */
+.close-menu-icon {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.close-menu-icon:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* Push animation when clicked */
+.close-menu-icon:active {
+  transform: translateY(2px) scale(0.7); /* Simulate a "push-in" effect */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Reduce shadow for pressed effect */
+}
+
+/* Media Query for Viewports Smaller than 800px */
+@media (max-width: 941px) {
+  #navbar {
+    display: block; /* Always visible */
+    top: 0;
+  }
+
+  #navbar.visible {
+    display: block; /* Override to ensure visibility */
+  }
+
+  #header {
+    display: none; /* Hide the header for small screens */
+  }
+}
+
+/* Hide dropdown content by default */
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  width: 100%; /* Set width to 100% of the parent element */
+
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  background: darkgray;
+}
+
+.dropdown-content a:hover {
+  background: #ffd67a;
+  color: black;
+}
+
+/* Show dropdown content when the parent is active */
+.nav-dropdown.active .dropdown-content {
+  max-height: 1000px; /* A large enough value to accommodate the content */
 }

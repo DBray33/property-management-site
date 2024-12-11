@@ -54,6 +54,31 @@ if (navbar) {
   }
 }
 
+// Navbar dropdown menu functionality
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+  dropdowns.forEach((dropdown) => {
+    const link = dropdown.querySelector('a');
+    const content = dropdown.querySelector('.dropdown-content');
+
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      dropdown.classList.toggle('active');
+
+      // Adjust the max-height based on the content height
+      if (dropdown.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = '0';
+      }
+    });
+  });
+});
+
+// //////////////////////////////////////
+// //////////////////////////////////////
+
 // //////////////////////////////////////
 // SITE LOGO ANIMATION /////////////////
 const siteLogo = document.querySelector('.site-logo');

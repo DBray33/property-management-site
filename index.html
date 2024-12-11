@@ -80,11 +80,46 @@
         <nav class="header-nav">
           <ul class="nav-list">
             <li><a href="index.html">HOME</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#owners">I'M AN OWNER</a></li>
-            <li><a href="#renters">I'M A RENTER</a></li>
+            <li class="dropdown">
+              <a href="#services">SERVICES</a>
+              <ul class="dropdown-menu">
+                <li><a href="#services-overview">Overview</a></li>
+                <li><a href="#services-marketing">Marketing</a></li>
+                <li>
+                  <a href="#services-tenant-screening">Tenant Screening</a>
+                </li>
+                <li><a href="#services-rent-collection">Rent Collection</a></li>
+                <li><a href="#services-maintenance">Maintenance</a></li>
+                <li><a href="#services-accounting">Accounting</a></li>
+                <li><a href="#services-eviction">Eviction</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#owners">I'M AN OWNER</a>
+              <ul class="dropdown-menu">
+                <li><a href="#owner-portal">Owner Portal</a></li>
+                <li><a href="#owner-resources">Owner Resources</a></li>
+                <li><a href="#owner-faqs">Owner FAQs</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#renters">I'M A RENTER</a>
+              <ul class="dropdown-menu">
+                <li><a href="#renter-portal">Owner Portal</a></li>
+                <li><a href="#renter-resources">Owner Resources</a></li>
+                <li><a href="#renter-faqs">Owner FAQs</a></li>
+                <li><a href="#renter-maintenance">Maintenance</a></li>
+              </ul>
+            </li>
             <li><a href="#vacancies">VACANCIES</a></li>
-            <li><a href="#about">ABOUT</a></li>
+            <li class="dropdown">
+              <a href="#about">ABOUT</a>
+              <ul class="dropdown-menu">
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </li>
             <li><a href="blog/blog.html">BLOG</a></li>
           </ul>
         </nav>
@@ -110,7 +145,7 @@
             <div class="menu-number">
               <a href="tel:1234567890">123-456-7890</a>
             </div>
-            <!-- New Buttons Section -->
+            <!-- Buttons Section -->
             <div class="menu-buttons">
               <button class="menu-button pay-rent">
                 <i class="fa fa-credit-card"></i> Pay Rent
@@ -123,11 +158,45 @@
           <!-- Menu List -->
           <ul class="menu-list">
             <li><a href="index.html">HOME</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#owners">I'M AN OWNER</a></li>
-            <li><a href="#renters">I'M A RENTER</a></li>
-            <li><a href="#vacancies">VACANCIES</a></li>
-            <li><a href="#about">ABOUT</a></li>
+            <li class="nav-dropdown">
+              <a href="#services">SERVICES</a>
+              <ul class="dropdown-content">
+                <li><a href="#services-overview">Overview</a></li>
+                <li><a href="#services-marketing">Marketing</a></li>
+                <li>
+                  <a href="#services-tenant-screening">Tenant Screening</a>
+                </li>
+                <li><a href="#services-rent-collection">Rent Collection</a></li>
+                <li><a href="#services-maintenance">Maintenance</a></li>
+                <li><a href="#services-accounting">Accounting</a></li>
+                <li><a href="#services-eviction">Eviction</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#owners">I'M AN OWNER</a>
+              <ul class="dropdown-content">
+                <li><a href="#owner-portal">Owner Portal</a></li>
+                <li><a href="#owner-resources">Owner Resources</a></li>
+                <li><a href="#owner-faqs">Owner FAQs</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#renters">I'M A RENTER</a>
+              <ul class="dropdown-content">
+                <li><a href="#renter-portal">Owner Portal</a></li>
+                <li><a href="#renter-resources">Owner Resources</a></li>
+                <li><a href="#renter-faqs">Owner FAQs</a></li>
+                <li><a href="#renter-maintenance">Maintenance</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#about">ABOUT</a>
+              <ul class="dropdown-content">
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </li>
             <li><a href="blog/blog.html">BLOG</a></li>
           </ul>
         </div>
@@ -505,7 +574,7 @@
 
     <!-- FEATURED LISTINGS -->
     <section class="featured-listings">
-      <h1>Featured Listings</h1>
+      <h1>FEATURED LISTINGS</h1>
       <h2>(Tap image to expand)</h2>
 
       <!-- House #1 -->
@@ -522,27 +591,25 @@
           <a href="https://example.com/property1" target="_blank"></a>
         </div>
         <div
-          class="panel"
+          class="panel animate"
           style="
             background-image: url('https://photos.zillowstatic.com/fp/d3a4d21533977ee9675bf58c5e3f629b-uncropped_scaled_within_1536_1152.webp');
           "></div>
         <div
-          class="panel"
+          class="panel animate"
           style="
             background-image: url('https://photos.zillowstatic.com/fp/7d865e2908ae1d4ead397d259d8cfd47-uncropped_scaled_within_1536_1152.webp');
           "></div>
         <div
-          class="panel"
+          class="panel animate"
           style="
             background-image: url('https://photos.zillowstatic.com/fp/d3f0c786ace597785ae053b43ce1a3c7-uncropped_scaled_within_1536_1152.webp');
           "></div>
         <div
-          class="panel"
+          class="panel animate"
           style="
             background-image: url('https://photos.zillowstatic.com/fp/03d61147514a8f0e068fe8878ad455d8-uncropped_scaled_within_1536_1152.webp');
-          ">
-          <a href="https://example.com/property3" target="_blank"></a>
-        </div>
+          "></div>
       </div>
 
       <!-- House #2 -->
