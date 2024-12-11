@@ -366,6 +366,7 @@ body {
 
 .hero-button:hover {
   transform: scale(0.95); /* Shrink slightly on hover */
+  color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
     0 1px 0 rgba(255, 255, 255, 0.5) inset; /* Slightly reduce shadow for pressed effect */
 }
@@ -1131,6 +1132,7 @@ body {
 }
 
 .section i {
+  color: white;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -1399,7 +1401,7 @@ body {
 
 #bar-chart h2 {
   font-size: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   color: WHITE;
 }
 
@@ -1646,7 +1648,7 @@ body {
 #blog-preview {
   text-align: center;
   padding: 50px 20px;
-  background-color: #f9f9f9;
+  background-color: var(--light-blue);
 }
 
 #blog-preview h2 {
@@ -1676,6 +1678,7 @@ body {
 }
 
 .hero-button.blog-button:hover {
+  color: white;
   background: linear-gradient(
     to bottom,
     #0056b3,
@@ -1863,14 +1866,20 @@ body {
   background-color: black;
   color: white;
   padding: 50px 20px;
-  text-align: center;
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 /* Main Footer Information */
-.footer-main h2 {
-  font-size: 4rem;
-  margin-bottom: 10px;
-  color: var(--primary-color);
+.footer-main {
+  flex: 1;
+  text-align: center;
 }
 
 .footer-main p {
@@ -1879,25 +1888,12 @@ body {
   color: #ccc;
 }
 
-.footer-main .menu-logo {
-  display: none; /* Hidden by default */
-}
-
 .footer-main .menu-logo a {
   font-size: 6rem;
   color: var(--primary-color);
   text-decoration: none;
   font-weight: bold;
   padding: 2rem;
-}
-
-.footer-main .menu-logo a:hover {
-  font-size: 6rem;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow: 0 0 30px var(--primary-color);
-  transition: all 0.2s ease-in-out; /* Quick and smooth transition */
 }
 
 .footer-main .social-links {
@@ -1913,6 +1909,44 @@ body {
 
 .footer-main .social-links a:hover {
   color: #fff;
+}
+
+/* Contact Form */
+.footer-contact {
+  flex: 1;
+
+  color: black;
+  padding: 20px;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contact h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#contact-form label {
+  font-size: 1rem;
+  color: black;
+}
+
+#contact-form input,
+#contact-form textarea {
+  font-family: 'Josefin Sans', sans-serif;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* Footer Grid */
@@ -1936,19 +1970,9 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.footer-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: var(--primary-color);
-}
-
 .footer-item ul {
   list-style: none;
   padding: 0;
-}
-
-.footer-item ul li {
-  margin-bottom: 5px;
 }
 
 .footer-item ul li a {
@@ -1961,31 +1985,63 @@ body {
   color: var(--secondary-color);
 }
 
+/* Footer Legal Section */
+.footer-legal {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #333;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.legal-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.legal-links a {
+  color: #ffd251;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: #ffb902;
+}
+
 /* Responsive Design */
 @media (max-width: 960px) {
-  .footer-main h2 {
-    display: none; /* Hide title */
-  }
-
-  .footer-main .menu-logo {
-    display: block; /* Show menu logo */
-    margin-bottom: 20px;
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
   }
 
   .footer-grid {
-    justify-content: center; /* Center grid items */
+    justify-content: center;
   }
 
   .footer-item {
-    flex: 1 1 calc(50% - 2rem); /* Two items per row */
+    flex: 1 1 calc(50% - 2rem);
     max-width: calc(50% - 2rem);
+  }
+
+  .footer-contact {
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 600px) {
   .footer-item {
-    flex: 1 1 100%; /* One item per row */
+    flex: 1 1 100%;
     max-width: 100%;
+  }
+
+  .footer-contact {
+    margin-top: 20px;
   }
 }
 

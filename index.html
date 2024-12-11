@@ -446,6 +446,7 @@
       </div>
     </section>
 
+    <!-- RENTAL ANALYSIS -->
     <section id="rental-analysis-form">
       <h2>NOT SURE WHAT YOU CAN CHARGE FOR YOUR RENTAL?</h2>
       <p>
@@ -746,7 +747,7 @@
       <p>Subscribe to receive emails for new blog posts</p>
       <form id="subscribe-form">
         <input type="email" placeholder="Enter your email address" required />
-        <button type="submit">Subscribe</button>
+        <button type="submit">SUBSCRIBE</button>
       </form>
       <div class="blog-grid">
         <!-- Blog Item 1 -->
@@ -823,20 +824,67 @@
 
     <!-- FOOTER -->
     <footer id="footer">
-      <div class="footer-main">
-        <h2 class="footer-title">Property Management Group</h2>
-        <div class="menu-logo">
-          <a href="index.html" class="menu-logo-link">PMG</a>
+      <div class="footer-container">
+        <!-- Footer Main -->
+        <div class="footer-main">
+          <div class="menu-logo">
+            <a href="index.html" class="menu-logo-link">PMG</a>
+          </div>
+          <p>123 Main Street, Reading, PA</p>
+          <p>Phone: 123-456-7890</p>
+          <p>Email: info@pmg.com</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
         </div>
-        <p>123 Main Street, Reading, PA</p>
-        <p>Phone: 123-456-7890</p>
-        <p>Email: info@pmg.com</p>
-        <div class="social-links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="#" aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-          ></a>
+
+        <!-- Contact Form -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <form id="contact-form">
+            <label for="name"></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required />
+
+            <label for="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required />
+
+            <label for="phone"></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your Phone Number" />
+
+            <label for="message"></label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              rows="4"
+              required></textarea>
+
+            <button type="submit" class="footer-submit-button hero-button">
+              SUBMIT
+            </button>
+          </form>
         </div>
       </div>
 
@@ -875,8 +923,24 @@
           </ul>
         </div>
       </div>
+
+      <!-- Copyright and Legal Section -->
+      <div class="footer-legal">
+        <p class="copyright">
+          &copy; <span id="year"></span> Property Management Group. All rights
+          reserved.
+        </p>
+        <ul class="legal-links">
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+      </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Automatically update the year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
