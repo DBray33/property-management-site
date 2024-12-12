@@ -1,0 +1,445 @@
+body {
+  background-color: var(--light-blue);
+  padding: 150px 0 0;
+}
+/* OVERVIEW */
+#services-overview h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#services-overview p {
+  text-align: center;
+  font-size: 18px;
+  margin: 0 1rem 2.5rem; /* Added left and right margin of 1rem and converted bottom margin to rem units */
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.service-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-item h2 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    margin: 1rem;
+    width: 100%;
+  }
+}
+
+/* MARKETING */
+#marketing-content {
+  padding: 40px 0;
+}
+
+#marketing-content h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#marketing-content p {
+  text-align: center;
+  font-size: 18px;
+  margin: 0 1rem 2.5rem; /* Added left and right margin of 1rem and converted bottom margin to rem units */
+}
+
+.marketing-strategies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.strategy-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.strategy-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.strategy-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.strategy-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .strategy-item {
+    width: 100%;
+  }
+}
+
+/* TENANT SCREENING */
+#tenant-screening-content {
+  padding: 40px 0;
+}
+
+#tenant-screening-content h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#tenant-screening-content p {
+  text-align: center;
+  font-size: 18px;
+  margin: 0 1rem 2.5rem; /* Added left and right margin of 1rem and converted bottom margin to rem units */
+}
+
+.screening-process {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.process-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.process-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.process-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .process-item {
+    width: 100%;
+  }
+}
+
+/* RENT COLLECTION */
+#rent-collection-content {
+  padding: 40px 0;
+}
+
+#rent-collection-content h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#rent-collection-content p {
+  text-align: center;
+  font-size: 18px;
+  margin: 0 1rem 2.5rem; /* Added left and right margin of 1rem and converted bottom margin to rem units */
+}
+
+.collection-methods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.method-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.method-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.method-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.method-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .method-item {
+    width: 100%;
+  }
+}
+
+/* MAINTENANCE */
+#maintenance-content {
+  padding: 40px 0;
+}
+
+#maintenance-content h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#maintenance-content p {
+  text-align: center;
+  font-size: 18px;
+  margin: 0 1rem 2.5rem; /* Added left and right margin of 1rem and converted bottom margin to rem units */
+}
+
+.maintenance-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.service-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    width: 100%;
+  }
+}
+
+/* ACCOUNTING */
+#accounting-content {
+  padding: 40px 0;
+}
+
+#accounting-content h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#accounting-content p {
+  text-align: center;
+  font-size: 18px;
+  margin: 0 1rem 2.5rem; /* Added left and right margin of 1rem and converted bottom margin to rem units */
+}
+
+.accounting-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.service-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    width: 100%;
+  }
+}
+
+/* EVICTION */
+#eviction-content {
+  padding: 40px 0;
+}
+
+#eviction-content h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#eviction-content p {
+  text-align: center;
+  font-size: 18px;
+  margin: 0 1rem 2.5rem; /* Added left and right margin of 1rem and converted bottom margin to rem units */
+}
+
+.eviction-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.service-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    width: 100%;
+  }
+}
+
+/* LEASE MANAGEMENT */
+#lease-management-content {
+  padding: 40px 0;
+}
+
+#lease-management-content h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#lease-management-content p {
+  text-align: center;
+  font-size: 18px;
+  margin: 0 1rem 2.5rem; /* Added left and right margin of 1rem and converted bottom margin to rem units */
+}
+
+.lease-management-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.service-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    width: 100%;
+  }
+}

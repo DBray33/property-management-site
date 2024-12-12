@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Management Template Website</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
+      rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../mobile.css" />
+    <link rel="stylesheet" href="services.css" />
+  </head>
+  <body>
+    <!-- LOGO (TOP LEFT CORNER) -->
+    <a href="../index.html" class="site-logo" id="site-logo">PMG</a>
+
+    <!-- HEADER -->
+    <header id="header">
+      <div class="container">
+        <nav class="header-nav">
+          <ul class="nav-list">
+            <li><a href="../index.html">HOME</a></li>
+            <li class="dropdown">
+              <a href="#services">SERVICES</a>
+              <ul class="dropdown-menu">
+                <li><a href="services-overview.html">Overview</a></li>
+                <li><a href="services-marketing.html">Marketing</a></li>
+                <li>
+                  <a href="services-tenant-screening.html">Tenant Screening</a>
+                </li>
+                <li>
+                  <a href="services-rent-collection.html">Rent Collection</a>
+                </li>
+                <li><a href="services-maintenance.html">Maintenance</a></li>
+                <li><a href="services-accounting.html">Accounting</a></li>
+                <li><a href="services-eviction.html">Eviction</a></li>
+                <li>
+                  <a href="services-lease-management.html">Lease Management</a>
+                </li>
+                <li><a href="services-support.html">24/7 Support</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#owners">I'M AN OWNER</a>
+              <ul class="dropdown-menu">
+                <li><a href="#owner-portal">Owner Portal</a></li>
+                <li><a href="#owner-resources">Owner Resources</a></li>
+                <li><a href="#owner-faqs">Owner FAQs</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#renters">I'M A RENTER</a>
+              <ul class="dropdown-menu">
+                <li><a href="#renter-portal">Owner Portal</a></li>
+                <li><a href="#renter-resources">Owner Resources</a></li>
+                <li><a href="#renter-faqs">Owner FAQs</a></li>
+                <li><a href="#renter-maintenance">Maintenance</a></li>
+              </ul>
+            </li>
+            <li><a href="#vacancies">VACANCIES</a></li>
+            <li class="dropdown">
+              <a href="#about">ABOUT</a>
+              <ul class="dropdown-menu">
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </li>
+            <li><a href="blog/blog.html">BLOG</a></li>
+          </ul>
+        </nav>
+        <div class="phone-number">
+          <a href="tel:1234567890">123-456-7890</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="navbar-content">
+        <button class="hamburger-icon" aria-label="Open Menu">
+          <span class="menu-icon">☰</span>
+          <span class="menu-text">MENU</span>
+        </button>
+        <div class="hamburger-menu">
+          <!-- Menu Header -->
+          <div class="menu-header">
+            <button class="close-menu-icon" aria-label="Close Menu">×</button>
+            <div class="menu-logo">
+              <a href="index.html" data-href="index.html" class="menu-logo-link"
+                >PMG</a
+              >
+            </div>
+            <div class="menu-number">
+              <a href="tel:1234567890">123-456-7890</a>
+            </div>
+            <!-- Buttons Section -->
+            <div class="menu-buttons">
+              <button class="menu-button pay-rent">
+                <i class="fa fa-credit-card"></i> Pay Rent
+              </button>
+              <button class="menu-button maintenance">
+                <i class="fa fa-wrench"></i> Maintenance
+              </button>
+            </div>
+          </div>
+          <!-- Menu List -->
+          <ul class="menu-list">
+            <li><a href="../index.html">HOME</a></li>
+            <li class="nav-dropdown">
+              <a href="#services">SERVICES</a>
+              <ul class="dropdown-content">
+                <li><a href="services-overview.html">Overview</a></li>
+                <li><a href="services-marketing.html">Marketing</a></li>
+                <li>
+                  <a href="services-tenant-screening.html">Tenant Screening</a>
+                </li>
+                <li>
+                  <a href="services-rent-collection.html">Rent Collection</a>
+                </li>
+                <li><a href="services-maintenance.html">Maintenance</a></li>
+                <li><a href="services-accounting.html">Accounting</a></li>
+                <li><a href="services-eviction.html">Eviction</a></li>
+                <li>
+                  <a href="services-lease-management.html">Lease Management</a>
+                </li>
+                <li><a href="services-support.html">24/7 Support</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#owners">I'M AN OWNER</a>
+              <ul class="dropdown-content">
+                <li><a href="#owner-portal">Owner Portal</a></li>
+                <li><a href="#owner-resources">Owner Resources</a></li>
+                <li><a href="#owner-faqs">Owner FAQs</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#renters">I'M A RENTER</a>
+              <ul class="dropdown-content">
+                <li><a href="#renter-portal">Owner Portal</a></li>
+                <li><a href="#renter-resources">Owner Resources</a></li>
+                <li><a href="#renter-faqs">Owner FAQs</a></li>
+                <li><a href="#renter-maintenance">Maintenance</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#about">ABOUT</a>
+              <ul class="dropdown-content">
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </li>
+            <li><a href="../blog/blog.html">BLOG</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- RENT COLLECTION CONTENT -->
+    <section id="rent-collection-content">
+      <div class="container">
+        <h1>Rent Collection Services</h1>
+        <p>
+          Our rent collection services are designed to ensure timely and
+          efficient rent payments from tenants. We use a variety of methods to
+          make the rent collection process smooth and hassle-free for both
+          property owners and tenants.
+        </p>
+
+        <div class="collection-methods">
+          <div class="method-item">
+            <h2>Online Payments</h2>
+            <p>
+              We offer a secure online payment portal where tenants can easily
+              pay their rent using credit cards, debit cards, or bank transfers.
+              This convenient option ensures timely payments and reduces the
+              risk of late fees.
+            </p>
+          </div>
+          <div class="method-item">
+            <h2>Automated Reminders</h2>
+            <p>
+              Our system sends automated reminders to tenants before their rent
+              is due. This helps ensure that tenants are aware of upcoming
+              payments and reduces the likelihood of late payments.
+            </p>
+          </div>
+          <div class="method-item">
+            <h2>Direct Deposits</h2>
+            <p>
+              We offer direct deposit options for tenants who prefer to have
+              their rent automatically deducted from their bank accounts. This
+              method ensures consistent and timely payments.
+            </p>
+          </div>
+          <div class="method-item">
+            <h2>Payment Tracking</h2>
+            <p>
+              Our system tracks all rent payments and provides detailed reports
+              to property owners. This transparency helps owners stay informed
+              about their rental income and identify any payment issues.
+            </p>
+          </div>
+          <div class="method-item">
+            <h2>Late Fee Management</h2>
+            <p>
+              We manage late fees and enforce payment policies to ensure tenants
+              adhere to their rental agreements. Our team handles all
+              communication with tenants regarding late payments and fees.
+            </p>
+          </div>
+          <div class="method-item">
+            <h2>Tenant Support</h2>
+            <p>
+              Our support team is available to assist tenants with any
+              payment-related issues or questions. We provide prompt and
+              professional assistance to ensure a smooth rent collection
+              process.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-main">
+        <h2 class="footer-title">Property Management Group</h2>
+        <div class="menu-logo">
+          <a href="../index.html" class="menu-logo-link">PMG</a>
+        </div>
+        <p>123 Main Street, Reading, PA</p>
+        <p>Phone: 123-456-7890</p>
+        <p>Email: info@pmg.com</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <!-- Office Hours -->
+        <div class="footer-item">
+          <h3>Office Hours</h3>
+          <p><strong>MONDAY - FRIDAY:</strong> 9 AM - 5 PM</p>
+          <p><strong>SATURDAY:</strong> By Appointment</p>
+          <p><strong>SUNDAY:</strong> Closed</p>
+        </div>
+        <!-- Owners -->
+        <div class="footer-item">
+          <h3>Owners</h3>
+          <ul>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <!-- Tenants -->
+        <div class="footer-item">
+          <h3>Tenants</h3>
+          <ul>
+            <li><a href="#">Pay Rent</a></li>
+            <li><a href="#">Maintenance Request</a></li>
+            <li><a href="#">Community Rules</a></li>
+          </ul>
+        </div>
+        <!-- Company -->
+        <div class="footer-item">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Our Company</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Copyright and Legal Section -->
+      <div class="footer-legal">
+        <p class="copyright">
+          &copy; <span id="year"></span> Property Management Group. All rights
+          reserved.
+        </p>
+        <ul class="legal-links">
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Automatically update the year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

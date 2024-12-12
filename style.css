@@ -2113,23 +2113,40 @@ body {
   display: block; /* Show when scrolled down */
 }
 
+/* Container for the navbar content */
 .navbar-content {
   display: flex;
-  justify-content: space-between; /* Space between logo and icon */
+  justify-content: flex-end; /* Move content to the right */
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  height: 60px;
+  width: 100%;
 }
 
-/* Hamburger Menu */
+/* Adjust the font size and vertical alignment of the hamburger icon */
 .hamburger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Adjust padding as needed */
   background: none;
   border: none;
-  font-size: 2.5rem;
   cursor: pointer;
-  margin-left: auto; /* Pushes the icon to the far right */
+}
+
+/* Style for the "MENU" text */
+.hamburger-icon .menu-text {
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-right: 5px; /* Adjust spacing between text and icon */
+  margin-top: 0.5rem;
+}
+
+/* Style for the icon */
+.hamburger-icon .menu-icon {
+  font-size: 2.5rem; /* Adjust the font size as needed */
+}
+
+/* Ensure the hamburger menu button has no default styles */
+.hamburger-icon:focus {
+  outline: none;
 }
 
 .hamburger-menu {
