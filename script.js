@@ -72,6 +72,31 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         content.style.maxHeight = '0';
       }
+
+      // Close other dropdowns
+      dropdowns.forEach((otherDropdown) => {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.classList.remove('active');
+          otherDropdown.querySelector('.dropdown-content').style.maxHeight =
+            '0';
+        }
+      });
+    });
+
+    // Close the dropdown if clicked outside
+    document.addEventListener('click', function (event) {
+      if (
+        !dropdown.contains(event.target) &&
+        dropdown.classList.contains('active')
+      ) {
+        dropdown.classList.remove('active');
+        content.style.maxHeight = '0';
+      }
+    });
+
+    // Prevent the dropdown from closing when clicking inside
+    dropdown.addEventListener('click', function (event) {
+      event.stopPropagation();
     });
   });
 });
