@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Management Template Website</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../mobile.css" />
+    <link rel="stylesheet" href="../owner.css" />
+    <link rel="stylesheet" href="renter.css" />
+  </head>
+  <body>
+    <!-- LOGO (TOP LEFT CORNER) -->
+    <a href="../index.html" class="site-logo" id="site-logo">PMG</a>
+
+    <!-- HEADER -->
+    <header id="header">
+      <div class="container">
+        <nav class="header-nav">
+          <ul class="nav-list">
+            <li><a href="../index.html">HOME</a></li>
+            <li class="dropdown">
+              <a href="#services">SERVICES</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../services/services-overview.html">Overview</a>
+                </li>
+                <li>
+                  <a href="../services/services-marketing.html">Marketing</a>
+                </li>
+                <li>
+                  <a href="../services/services-tenant-screening.html"
+                    >Tenant Screening</a
+                  >
+                </li>
+                <li>
+                  <a href="../services/services-rent-collection.html"
+                    >Rent Collection</a
+                  >
+                </li>
+                <li>
+                  <a href="../services/services-maintenance.html"
+                    >Maintenance</a
+                  >
+                </li>
+                <li>
+                  <a href="../services/services-accounting.html">Accounting</a>
+                </li>
+                <li>
+                  <a href="../services/services-eviction.html">Eviction</a>
+                </li>
+                <li>
+                  <a href="../services/services-lease-management.html"
+                    >Lease Management</a
+                  >
+                </li>
+                <li>
+                  <a href="../services/services-support.html">24/7 Support</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#owners">I'M AN OWNER</a>
+              <ul class="dropdown-menu">
+                <li><a href="../owner/owner-portal.html">Owner Portal</a></li>
+                <li>
+                  <a href="../owner/owner-resources.html">Owner Resources</a>
+                </li>
+                <li><a href="../owner/owner-faqs.html">Owner FAQs</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#renters">I'M A RENTER</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="renter-portal.html">Renter Portal</a>
+                </li>
+                <li>
+                  <a href="renter-resources.html">Renter Resources</a>
+                </li>
+                <li><a href="renter-faqs.html">Renter FAQs</a></li>
+                <li>
+                  <a href="renter-maintenance.html">Maintenance</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#vacancies">VACANCIES</a></li>
+            <li class="dropdown">
+              <a href="#about">ABOUT</a>
+              <ul class="dropdown-menu">
+                <li><a href="../about/about-us.html">About Us</a></li>
+                <li><a href="../about/testimonials.html">Testimonials</a></li>
+                <li><a href="../about/contact.html">Contact</a></li>
+              </ul>
+            </li>
+            <li><a href="blog/blog.html">BLOG</a></li>
+          </ul>
+        </nav>
+        <div class="phone-number">
+          <a href="tel:1234567890">123-456-7890</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="navbar-content">
+        <button class="hamburger-icon" aria-label="Open Menu">
+          <span class="menu-icon">☰</span>
+          <span class="menu-text">MENU</span>
+        </button>
+        <div class="hamburger-menu">
+          <!-- Menu Header -->
+          <div class="menu-header">
+            <button class="close-menu-icon" aria-label="Close Menu">×</button>
+            <div class="menu-logo">
+              <a href="index.html" data-href="index.html" class="menu-logo-link"
+                >PMG</a
+              >
+            </div>
+            <div class="menu-number">
+              <a href="tel:1234567890">123-456-7890</a>
+            </div>
+            <!-- Buttons Section -->
+            <div class="menu-buttons">
+              <button class="menu-button pay-rent">
+                <i class="fa fa-credit-card"></i> Pay Rent
+              </button>
+              <button class="menu-button maintenance">
+                <i class="fa fa-wrench"></i> Maintenance
+              </button>
+            </div>
+          </div>
+          <!-- Menu List -->
+          <ul class="menu-list">
+            <li><a href="index.html">HOME</a></li>
+            <li class="nav-dropdown">
+              <a href="#services">SERVICES</a>
+              <ul class="dropdown-content">
+                <li>
+                  <a href="../services/services-overview.html">Overview</a>
+                </li>
+                <li>
+                  <a href="../services/services-marketing.html">Marketing</a>
+                </li>
+                <li>
+                  <a href="../services/services-tenant-screening.html"
+                    >Tenant Screening</a
+                  >
+                </li>
+                <li>
+                  <a href="../services/services-rent-collection.html"
+                    >Rent Collection</a
+                  >
+                </li>
+                <li>
+                  <a href="../services/services-maintenance.html"
+                    >Maintenance</a
+                  >
+                </li>
+                <li>
+                  <a href="../services/services-accounting.html">Accounting</a>
+                </li>
+                <li>
+                  <a href="../services/services-eviction.html">Eviction</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#owners">I'M AN OWNER</a>
+              <ul class="dropdown-content">
+                <li><a href="owner-portal.html">Owner Portal</a></li>
+                <li>
+                  <a href="owner-resources.html">Owner Resources</a>
+                </li>
+                <li><a href="owner-faqs.html">Owner FAQs</a></li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#renters">I'M A RENTER</a>
+              <ul class="dropdown-content">
+                <li>
+                  <a href="r../enter/renter-portal.html">Renter Portal</a>
+                </li>
+                <li>
+                  <a href="../renter/renter-resources.html">Renter Resources</a>
+                </li>
+                <li><a href="../renter/renter-faqs.html">Renter FAQs</a></li>
+                <li>
+                  <a href="../renter/renter-maintenance.html">Maintenance</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#about">ABOUT</a>
+              <ul class="dropdown-content">
+                <li><a href="../about/about-us.html">About Us</a></li>
+                <li><a href="../about/testimonials.html">Testimonials</a></li>
+                <li><a href="../about/contact.html">Contact</a></li>
+              </ul>
+            </li>
+            <li><a href="blog/blog.html">BLOG</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- RENTER FAQS -->
+    <section id="renter-faqs">
+      <div class="container">
+        <h1>Renter FAQs</h1>
+        <p>
+          Find answers to frequently asked questions about property management.
+          Get quick solutions to common issues and concerns.
+        </p>
+
+        <!-- Keyword Search Bar -->
+        <div class="keyword">Keyword Search</div>
+        <div class="faq-search">
+          <input
+            type="text"
+            id="faq-search-input"
+            placeholder="Search FAQs..."
+            onkeyup="searchFAQs()" />
+        </div>
+
+        <div class="faq-list" id="faq-list">
+          <div class="faq-item">
+            <h2>How do I submit a maintenance request?</h2>
+            <p>
+              Tenants can submit maintenance requests through our online portal.
+              Our team promptly addresses these requests and coordinates with
+              trusted vendors to ensure timely and high-quality repairs.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>What is the process for paying rent?</h2>
+            <p>
+              We offer multiple rent payment options, including online payments,
+              direct deposits, and automated reminders. Our system tracks all
+              payments and provides detailed reports to property owners.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do you handle late rent payments?</h2>
+            <p>
+              We have a structured process for handling late rent payments,
+              including sending reminders and applying late fees as outlined in
+              the lease agreement. We work with tenants to resolve payment
+              issues promptly.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>What is your policy on rent increases?</h2>
+            <p>
+              Rent increases are implemented in compliance with local
+              regulations and lease agreements. We communicate with tenants in
+              advance and provide the necessary documentation for rent
+              adjustments.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do you handle tenant complaints?</h2>
+            <p>
+              We take tenant complaints seriously and address them promptly. Our
+              team investigates the issue, communicates with the tenant, and
+              takes appropriate action to resolve the complaint.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>Can I access my lease agreement and payment history online?</h2>
+            <p>
+              Yes, tenants have access to an online portal where they can view
+              their lease agreements, payment history, maintenance requests, and
+              other important information about their rental property.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>What is the process for renewing my lease?</h2>
+            <p>
+              We manage the entire lease renewal process, including
+              communicating with tenants, preparing renewal documents, and
+              ensuring compliance with all legal requirements. We aim to
+              minimize disruptions and retain quality tenants.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do you handle security deposits?</h2>
+            <p>
+              We collect and manage security deposits in compliance with local
+              regulations. At the end of the lease, we conduct a move-out
+              inspection and return the deposit, minus any deductions for
+              damages or unpaid rent.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>What should I do in case of an emergency maintenance issue?</h2>
+            <p>
+              In case of an emergency maintenance issue, tenants should contact
+              our 24/7 support line immediately. Our team is available around
+              the clock to handle urgent maintenance requests.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do you handle tenant evictions?</h2>
+            <p>
+              Our eviction process is conducted in compliance with all legal
+              requirements. We handle everything from serving notices to
+              representing you in court, ensuring a smooth and efficient
+              process.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do you ensure my rental property is well-maintained?</h2>
+            <p>
+              We conduct regular inspections and perform preventive maintenance
+              to keep your rental property in excellent condition. Our team
+              promptly addresses any maintenance issues reported by tenants.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>Can I access my property’s financial reports online?</h2>
+            <p>
+              Yes, property owners can access detailed financial reports through
+              our online portal. These reports include income statements,
+              expense reports, and other financial documents.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do you market vacant properties?</h2>
+            <p>
+              We use a combination of online listings, social media marketing,
+              and professional photography to attract high-quality tenants
+              quickly. Our marketing strategies ensure maximum exposure for your
+              property.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>What is your policy on rent increases?</h2>
+            <p>
+              Rent increases are implemented in compliance with local
+              regulations and lease agreements. We communicate with tenants in
+              advance and provide the necessary documentation for rent
+              adjustments.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do you handle late rent payments?</h2>
+            <p>
+              We have a structured process for handling late rent payments,
+              including sending reminders and applying late fees as outlined in
+              the lease agreement. We work with tenants to resolve payment
+              issues promptly.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>What is your process for tenant evictions?</h2>
+            <p>
+              Our eviction process is conducted in compliance with all legal
+              requirements. We handle everything from serving notices to
+              representing you in court, ensuring a smooth and efficient
+              process.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>What should I do if I lose my keys?</h2>
+            <p>
+              If you lose your keys, please contact our office immediately. We
+              will arrange for a replacement key or a lock change if necessary.
+              There may be a fee associated with this service.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>Can I have a pet in my rental property?</h2>
+            <p>
+              Pet policies vary by property. Please refer to your lease
+              agreement or contact our office to confirm if pets are allowed in
+              your rental property. Additional pet deposits or fees may apply.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do I report a noise complaint?</h2>
+            <p>
+              To report a noise complaint, please contact our office with
+              details about the issue. We will address the complaint promptly
+              and take appropriate action to resolve the situation.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>What is the process for moving out?</h2>
+            <p>
+              When you decide to move out, please provide written notice as
+              required by your lease agreement. We will schedule a move-out
+              inspection and provide instructions for returning keys and any
+              other necessary steps.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>Can I make changes to the rental property?</h2>
+            <p>
+              Any changes or modifications to the rental property must be
+              approved by our office in writing. Unauthorized changes may result
+              in charges for restoring the property to its original condition.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h2>How do I update my contact information?</h2>
+            <p>
+              To update your contact information, please log in to our online
+              portal and update your profile. You can also contact our office
+              directly to provide the updated information.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-container">
+        <!-- Footer Main -->
+        <div class="footer-main">
+          <div class="menu-logo">
+            <a href="../index.html" class="menu-logo-link">PMG</a>
+          </div>
+          <p>123 Main Street, Reading, PA</p>
+          <p>Phone: 123-456-7890</p>
+          <p>Email: info@pmg.com</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <!-- <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <form id="contact-form">
+            <label for="name"></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required />
+
+            <label for="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required />
+
+            <label for="phone"></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your Phone Number" />
+
+            <label for="message"></label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              rows="4"
+              required></textarea>
+
+            <button type="submit" class="footer-submit-button hero-button">
+              SUBMIT
+            </button>
+          </form>
+        </div> -->
+      </div>
+
+      <div class="footer-grid">
+        <!-- Office Hours -->
+        <div class="footer-item">
+          <h3>Office Hours</h3>
+          <p><strong>MONDAY - FRIDAY:</strong> 9 AM - 5 PM</p>
+          <p><strong>SATURDAY:</strong> By Appointment</p>
+          <p><strong>SUNDAY:</strong> Closed</p>
+        </div>
+        <!-- Owners -->
+        <div class="footer-item">
+          <h3>Owners</h3>
+          <ul>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <!-- Tenants -->
+        <div class="footer-item">
+          <h3>Tenants</h3>
+          <ul>
+            <li><a href="#">Pay Rent</a></li>
+            <li><a href="#">Maintenance Request</a></li>
+            <li><a href="#">Community Rules</a></li>
+          </ul>
+        </div>
+        <!-- Company -->
+        <div class="footer-item">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../index.html#footer">Contact</a></li>
+            <li><a href="#">About Our Company</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright and Legal Section -->
+      <div class="footer-legal">
+        <p class="copyright">
+          &copy; <span id="year"></span> Property Management Group. All rights
+          reserved.
+        </p>
+        <ul class="legal-links">
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Automatically update the year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // FAQ Search Function
+      function searchFAQs() {
+        const input = document.getElementById('faq-search-input');
+        const filter = input.value.toLowerCase();
+        const faqList = document.getElementById('faq-list');
+        const faqItems = faqList.getElementsByClassName('faq-item');
+
+        for (let i = 0; i < faqItems.length; i++) {
+          const faqItem = faqItems[i];
+          const text = faqItem.textContent || faqItem.innerText;
+          if (text.toLowerCase().indexOf(filter) > -1) {
+            faqItem.style.display = '';
+          } else {
+            faqItem.style.display = 'none';
+          }
+        }
+      }
+    </script>
+    <script src="../script.js"></script>
+  </body>
+</html>

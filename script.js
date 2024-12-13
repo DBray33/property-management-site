@@ -400,3 +400,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 200); // Delay to allow smooth animations
   });
 });
+
+// //////////////////////////////////////
+// //////////////////////////////////////
+// FOOTER CONTACT JUMP TO LINK
+document.addEventListener('DOMContentLoaded', () => {
+  const blogPosts = document.querySelectorAll('.blog-animate');
+  blogPosts.forEach((post) => {
+    setTimeout(() => {
+      post.classList.add('loaded');
+    }, 200); // Delay to allow smooth animations
+  });
+
+  // FOOTER CONTACT JUMP TO LINK
+  if (window.location.hash) {
+    const targetId = window.location.hash.substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: targetElement.offsetTop - 40, // Adjust the scroll position to land 30px higher
+          behavior: 'smooth',
+        });
+      }, 100); // Delay to ensure the page has fully loaded
+    }
+  }
+});
