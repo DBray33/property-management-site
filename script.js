@@ -24,7 +24,7 @@ const closeMenuIcon = document.querySelector('.close-menu-icon');
 if (navbar) {
   // Show navbar after scrolling
   const handleScroll = () => {
-    if (window.scrollY > 10) {
+    if (window.scrollY > 4) {
       navbar.classList.add('visible');
     } else {
       navbar.classList.remove('visible');

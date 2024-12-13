@@ -10,6 +10,18 @@
   }
 }
 
+@media (max-width: 941px) {
+  #hero {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-section {
+    padding: 20px 0;
+  }
+}
+
 /* Media query for landscape orientation on smatphones */
 @media (max-height: 595px) {
   #hero {
@@ -23,7 +35,7 @@
   }
 }
 
-@media (max-height: 595px) and (max-width: 860px) {
+@media (max-height: 595px) and (max-width: 941px) {
   #hero {
     margin-top: 10px;
   }
@@ -39,7 +51,7 @@
 
 @media (max-height: 595px) and (max-width: 633px) {
   #hero {
-    margin-top: 60px;
+    margin-top: 50px;
   }
 
   .hero-content {
@@ -58,6 +70,7 @@
     margin-top: 0.8rem;
   }
 }
+/* End Media query for landscape orientation on smatphones */
 
 /* WELCOME */
 @media (max-width: 760px) {
