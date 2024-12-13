@@ -15,12 +15,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
-      rel="stylesheet" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
       href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
       rel="stylesheet" />
 
@@ -233,7 +227,6 @@
     </nav>
 
     <!-- OWNER FAQS -->
-    <!-- OWNER FAQS -->
     <section id="owner-faqs">
       <div class="container">
         <h1>Owner FAQs</h1>
@@ -242,7 +235,16 @@
           Get quick solutions to common issues and concerns.
         </p>
 
-        <div class="faq-list">
+        <!-- Keyword Search Bar -->
+        <div class="faq-search">
+          <input
+            type="text"
+            id="faq-search-input"
+            placeholder="Search FAQs..."
+            onkeyup="searchFAQs()" />
+        </div>
+
+        <div class="faq-list" id="faq-list">
           <div class="faq-item">
             <h2>What services do you offer?</h2>
             <p>
@@ -444,6 +446,7 @@
         <div class="footer-item">
           <h3>Company</h3>
           <ul>
+            <li><a href="../index.html#footer">Contact</a></li>
             <li><a href="#">About Our Company</a></li>
             <li><a href="#">Careers</a></li>
           </ul>
@@ -466,6 +469,24 @@
     <script>
       // Automatically update the year
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // FAQ Search Function
+      function searchFAQs() {
+        const input = document.getElementById('faq-search-input');
+        const filter = input.value.toLowerCase();
+        const faqList = document.getElementById('faq-list');
+        const faqItems = faqList.getElementsByClassName('faq-item');
+
+        for (let i = 0; i < faqItems.length; i++) {
+          const faqItem = faqItems[i];
+          const text = faqItem.textContent || faqItem.innerText;
+          if (text.toLowerCase().indexOf(filter) > -1) {
+            faqItem.style.display = '';
+          } else {
+            faqItem.style.display = 'none';
+          }
+        }
+      }
     </script>
     <script src="../script.js"></script>
   </body>
