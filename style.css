@@ -1880,6 +1880,11 @@ body {
   color: #ffb902;
 }
 
+.footer-link {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
 /* Responsive Design */
 @media (max-width: 960px) {
   .footer-container {
