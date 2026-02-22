@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | PMG</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">PMG</a>
+      <div class="nav-links" id="navLinks">
+        <a href="listings.html">Listings</a>
+        <a href="owners.html">Owners</a>
+        <a href="renters.html">Renters</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:1234567890" class="nav-phone"><i class="fas fa-phone"></i> <span>123-456-7890</span></a>
+        <a href="listings.html" class="btn btn-sm">Find a Home</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="listings.html">Listings</a>
+      <a href="owners.html">Owners</a>
+      <a href="renters.html">Renters</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <div class="mobile-menu-actions">
+        <a href="tel:1234567890" class="btn btn-outline btn-block"><i class="fas fa-phone"></i> 123-456-7890</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="label" data-reveal>Get in Touch</span>
+      <h1 data-reveal>Let's Talk.</h1>
+      <p data-reveal>Have a question, need a quote, or want to schedule a property visit? We're here to help.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="content-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- INFO -->
+        <div class="contact-info" data-reveal>
+          <h2>Contact Information</h2>
+          <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Office</h4>
+              <p>123 Main Street<br>Reading, PA 19601</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:1234567890">123-456-7890</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:info@pmg.com">info@pmg.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Office Hours</h4>
+              <p>Monday &ndash; Friday: 9AM &ndash; 5PM<br>Saturday: By Appointment<br>Sunday: Closed</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+              <h4>24/7 Emergency Line</h4>
+              <p><a href="tel:1234567890">123-456-7890</a><br>For current tenants with maintenance emergencies.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="contact-form" data-reveal>
+          <h3>Send Us a Message</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">I am a...</label>
+              <select id="subject" name="subject">
+                <option>Property Owner</option>
+                <option>Prospective Tenant</option>
+                <option>Current Tenant</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="property-address">Property Address (if applicable)</label>
+              <input type="text" id="property-address" name="property-address">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-block" style="margin-top:.5rem">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTAL ANALYSIS CTA -->
+  <section class="rent-data">
+    <div class="container">
+      <div class="rent-cta" data-reveal>
+        <h3>Free Rental Analysis</h3>
+        <p>Not sure what to charge for your rental property? Submit your property address above and we'll send you a detailed rental analysis &mdash; completely free, no obligations.</p>
+        <a href="tel:1234567890" class="btn"><i class="fas fa-phone"></i> Call for a Quick Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo">PMG</a>
+          <p>Property Management Group</p>
+          <p>123 Main Street<br>Reading, PA 19601</p>
+          <p><a href="tel:1234567890">123-456-7890</a></p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>For Owners</h4><a href="portal.html?type=owner">Owner Portal</a><a href="owners.html">Our Services</a><a href="owners.html">Pricing</a></div>
+        <div class="footer-col"><h4>For Renters</h4><a href="portal.html">Tenant Portal</a><a href="listings.html">Find a Rental</a><a href="portal.html">Pay Rent</a></div>
+        <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Office Hours</h4><p>Mon &ndash; Fri: 9AM &ndash; 5PM</p><p>Sat: By Appointment</p><p>Sun: Closed</p></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Property Management Group. All rights reserved. Site by <a href="https://keystonewebsolutions.com" target="_blank" rel="noopener">Keystone Web Solutions</a></p>
+        <div class="footer-legal-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

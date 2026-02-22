@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Login | PMG</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login-page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient glow */
+    .login-page::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(232,168,35,.1), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .login-page::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(232,168,35,.06), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-brand {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .login-brand a {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .login-brand p {
+      color: var(--gray-400);
+      font-size: .9rem;
+      margin-top: .25rem;
+    }
+
+    /* Portal type tabs */
+    .login-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2rem;
+      background: var(--navy-light);
+      border-radius: 50px;
+      padding: 4px;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .login-tab {
+      flex: 1;
+      padding: .7rem 1rem;
+      text-align: center;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      background: none;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .login-tab.active {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .login-tab:not(.active):hover {
+      color: var(--white);
+    }
+
+    /* Card */
+    .login-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2rem;
+    }
+
+    .login-card h2 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .35rem;
+    }
+    .login-card .login-sub {
+      font-size: .88rem;
+      color: var(--gray-400);
+      margin-bottom: 2rem;
+    }
+
+    /* Form */
+    .login-form .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .login-form label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .4rem;
+    }
+    .login-form input {
+      width: 100%;
+      padding: .8rem 1rem;
+      font-size: .92rem;
+      font-family: var(--font-sans);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      color: var(--white);
+      outline: none;
+      transition: var(--transition);
+    }
+    .login-form input::placeholder {
+      color: var(--gray-600);
+    }
+    .login-form input:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,.08);
+    }
+
+    .login-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+    }
+    .login-remember {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .82rem;
+      color: var(--gray-400);
+      cursor: pointer;
+    }
+    .login-remember input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+    .login-forgot {
+      font-size: .82rem;
+      color: var(--gold);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .login-forgot:hover {
+      color: var(--gold-light);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: .85rem;
+      font-size: .95rem;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      background: var(--gold);
+      color: var(--navy);
+      border: 2px solid var(--gold);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .login-btn:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(232,168,35,.25);
+    }
+
+    .login-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.75rem 0;
+      color: var(--gray-600);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .login-divider::before,
+    .login-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .login-alt-btn {
+      width: 100%;
+      padding: .75rem;
+      font-size: .88rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      background: transparent;
+      color: var(--gray-400);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+    }
+    .login-alt-btn:hover {
+      border-color: rgba(255,255,255,.25);
+      color: var(--white);
+      background: rgba(255,255,255,.04);
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: .85rem;
+      color: var(--gray-400);
+    }
+    .login-footer a {
+      color: var(--gold);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .login-footer a:hover {
+      color: var(--gold-light);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--gray-400);
+      font-size: .85rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+    .back-link:hover {
+      color: var(--gold);
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      .login-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="login-container">
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to PMG</a>
+
+      <div class="login-brand">
+        <a href="index.html">PMG</a>
+        <p>Property Management Group</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="login-tabs">
+        <button class="login-tab active" data-tab="tenant">Tenant Portal</button>
+        <button class="login-tab" data-tab="owner">Owner Portal</button>
+      </div>
+
+      <!-- Login Card -->
+      <div class="login-card">
+        <h2 id="loginTitle">Tenant Login</h2>
+        <p class="login-sub" id="loginSub">Pay rent, submit maintenance requests, and more.</p>
+
+        <form class="login-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+          </div>
+          <div class="login-options">
+            <label class="login-remember">
+              <input type="checkbox"> Remember me
+            </label>
+            <a href="#" class="login-forgot">Forgot password?</a>
+          </div>
+          <button type="submit" class="login-btn" id="loginBtn">Sign In</button>
+        </form>
+
+        <div class="login-divider">or</div>
+
+        <button class="login-alt-btn">
+          <i class="fas fa-key"></i> Sign in with Access Code
+        </button>
+      </div>
+
+      <div class="login-footer">
+        <p id="loginFooter">Don't have an account? <a href="contact.html">Contact us</a> to get set up.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab switching
+    const tabs = document.querySelectorAll('.login-tab');
+    const title = document.getElementById('loginTitle');
+    const sub = document.getElementById('loginSub');
+    const btn = document.getElementById('loginBtn');
+    const footer = document.getElementById('loginFooter');
+
+    const content = {
+      tenant: {
+        title: 'Tenant Login',
+        sub: 'Pay rent, submit maintenance requests, and more.',
+        btn: 'Sign In',
+        footer: 'Don\'t have an account? <a href="contact.html">Contact us</a> to get set up.'
+      },
+      owner: {
+        title: 'Owner Login',
+        sub: 'View financials, track maintenance, and manage your properties.',
+        btn: 'Sign In',
+        footer: 'New owner? <a href="contact.html">Get started</a> with PMG today.'
+      }
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const type = tab.dataset.tab;
+        title.textContent = content[type].title;
+        sub.textContent = content[type].sub;
+        btn.textContent = content[type].btn;
+        footer.innerHTML = content[type].footer;
+      });
+    });
+
+    // Check URL params for pre-selecting tab
+    const params = new URLSearchParams(window.location.search);
+    const portalType = params.get('type');
+    if (portalType === 'owner') {
+      tabs[1].click();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available Listings | PMG</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">PMG</a>
+      <div class="nav-links" id="navLinks">
+        <a href="listings.html">Listings</a>
+        <a href="owners.html">Owners</a>
+        <a href="renters.html">Renters</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:1234567890" class="nav-phone"><i class="fas fa-phone"></i> <span>123-456-7890</span></a>
+        <a href="listings.html" class="btn btn-sm">Find a Home</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="listings.html">Listings</a>
+      <a href="owners.html">Owners</a>
+      <a href="renters.html">Renters</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <div class="mobile-menu-actions">
+        <a href="tel:1234567890" class="btn btn-outline btn-block"><i class="fas fa-phone"></i> 123-456-7890</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="label" data-reveal>Available Rentals</span>
+      <h1 data-reveal>Find Your Next Home</h1>
+      <p data-reveal>Browse our current vacancies across Reading, PA and surrounding areas.</p>
+    </div>
+  </section>
+
+  <!-- LISTINGS -->
+  <section class="content-section">
+    <div class="container">
+      <div class="filter-bar" data-reveal>
+        <select>
+          <option>All Property Types</option>
+          <option>Residential</option>
+          <option>Multi-Family</option>
+          <option>Commercial</option>
+        </select>
+        <select>
+          <option>All Bedrooms</option>
+          <option>Studio</option>
+          <option>1 Bedroom</option>
+          <option>2 Bedrooms</option>
+          <option>3+ Bedrooms</option>
+        </select>
+        <select>
+          <option>Price Range</option>
+          <option>Under $1,000</option>
+          <option>$1,000 - $1,500</option>
+          <option>$1,500 - $2,000</option>
+          <option>$2,000+</option>
+        </select>
+        <input type="text" placeholder="Search by address or zip...">
+      </div>
+
+      <div class="listings-page-grid">
+        <a href="listings/1416-bleeker-ave.html" class="listing-card" data-reveal>
+          <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/e7ee11340176876916da70e34d69967f-cc_ft_768.webp')">
+            <span class="listing-badge">Available</span>
+          </div>
+          <div class="listing-info">
+            <span class="listing-price">$1,450/mo</span>
+            <h3>1416 Bleeker Ave</h3>
+            <p>Reading, PA 19607</p>
+            <div class="listing-meta">
+              <span><i class="fas fa-bed"></i> 3 Bed</span>
+              <span><i class="fas fa-bath"></i> 1.5 Bath</span>
+              <span><i class="fas fa-ruler-combined"></i> 1,200 sqft</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="listings/541-franklin-st.html" class="listing-card" data-reveal>
+          <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/dca67214890b3ad3b001fd9c1cc59e54-uncropped_scaled_within_1536_1152.webp')">
+            <span class="listing-badge">Available</span>
+          </div>
+          <div class="listing-info">
+            <span class="listing-price">$1,250/mo</span>
+            <h3>541 Franklin St</h3>
+            <p>West Reading, PA 19611</p>
+            <div class="listing-meta">
+              <span><i class="fas fa-bed"></i> 2 Bed</span>
+              <span><i class="fas fa-bath"></i> 1 Bath</span>
+              <span><i class="fas fa-ruler-combined"></i> 950 sqft</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="listings/2513-garfield-ave.html" class="listing-card" data-reveal>
+          <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/c3f42c6a4e32ce739ae07f64deeef055-uncropped_scaled_within_1536_1152.webp')">
+            <span class="listing-badge">Available</span>
+          </div>
+          <div class="listing-info">
+            <span class="listing-price">$1,675/mo</span>
+            <h3>2513 Garfield Ave</h3>
+            <p>West Lawn, PA 19609</p>
+            <div class="listing-meta">
+              <span><i class="fas fa-bed"></i> 3 Bed</span>
+              <span><i class="fas fa-bath"></i> 2 Bath</span>
+              <span><i class="fas fa-ruler-combined"></i> 1,400 sqft</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="listings/24-4-heather-hts.html" class="listing-card" data-reveal>
+          <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/8c8593668dec32e2b6042def0cc48486-uncropped_scaled_within_1536_1152.webp')">
+            <span class="listing-badge">Available</span>
+          </div>
+          <div class="listing-info">
+            <span class="listing-price">$1,100/mo</span>
+            <h3>24-4 Heather Hts</h3>
+            <p>Reading, PA 19606</p>
+            <div class="listing-meta">
+              <span><i class="fas fa-bed"></i> 2 Bed</span>
+              <span><i class="fas fa-bath"></i> 1 Bath</span>
+              <span><i class="fas fa-ruler-combined"></i> 850 sqft</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="listings/430-franklin-st.html" class="listing-card" data-reveal>
+          <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/e139396719ff930378b972bd1e42919a-uncropped_scaled_within_1536_1152.webp')">
+            <span class="listing-badge">Available</span>
+          </div>
+          <div class="listing-info">
+            <span class="listing-price">$1,350/mo</span>
+            <h3>430 Franklin St</h3>
+            <p>West Reading, PA 19611</p>
+            <div class="listing-meta">
+              <span><i class="fas fa-bed"></i> 3 Bed</span>
+              <span><i class="fas fa-bath"></i> 1 Bath</span>
+              <span><i class="fas fa-ruler-combined"></i> 1,100 sqft</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="listings/1416-bleeker-ave-b.html" class="listing-card" data-reveal>
+          <div class="listing-img" style="background-image:url('https://photos.zillowstatic.com/fp/d3a4d21533977ee9675bf58c5e3f629b-uncropped_scaled_within_1536_1152.webp')">
+            <span class="listing-badge">Coming Soon</span>
+          </div>
+          <div class="listing-info">
+            <span class="listing-price">$1,550/mo</span>
+            <h3>1416 Bleeker Ave, Unit B</h3>
+            <p>Reading, PA 19607</p>
+            <div class="listing-meta">
+              <span><i class="fas fa-bed"></i> 2 Bed</span>
+              <span><i class="fas fa-bath"></i> 1 Bath</span>
+              <span><i class="fas fa-ruler-combined"></i> 1,050 sqft</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner" data-reveal>
+        <div class="cta-text">
+          <h2>Don't See What You're Looking For?</h2>
+          <p>New listings are added regularly. Contact us and we'll help you find the perfect place.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo">PMG</a>
+          <p>Property Management Group</p>
+          <p>123 Main Street<br>Reading, PA 19601</p>
+          <p><a href="tel:1234567890">123-456-7890</a></p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>For Owners</h4>
+          <a href="portal.html?type=owner">Owner Portal</a>
+          <a href="owners.html">Our Services</a>
+          <a href="owners.html">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <h4>For Renters</h4>
+          <a href="portal.html">Tenant Portal</a>
+          <a href="listings.html">Find a Rental</a>
+          <a href="portal.html">Pay Rent</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Office Hours</h4>
+          <p>Mon &ndash; Fri: 9AM &ndash; 5PM</p>
+          <p>Sat: By Appointment</p>
+          <p>Sun: Closed</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Property Management Group. All rights reserved. Site by <a href="https://keystonewebsolutions.com" target="_blank" rel="noopener">Keystone Web Solutions</a></p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

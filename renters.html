@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renters | PMG</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">PMG</a>
+      <div class="nav-links" id="navLinks">
+        <a href="listings.html">Listings</a>
+        <a href="owners.html">Owners</a>
+        <a href="renters.html">Renters</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:1234567890" class="nav-phone"><i class="fas fa-phone"></i> <span>123-456-7890</span></a>
+        <a href="listings.html" class="btn btn-sm">Find a Home</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="listings.html">Listings</a>
+      <a href="owners.html">Owners</a>
+      <a href="renters.html">Renters</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <div class="mobile-menu-actions">
+        <a href="tel:1234567890" class="btn btn-outline btn-block"><i class="fas fa-phone"></i> 123-456-7890</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="label" data-reveal>For Renters</span>
+      <h1 data-reveal>Your Home,<br>Your Way.</h1>
+      <p data-reveal>Everything you need as a PMG tenant &mdash; from paying rent to requesting repairs.</p>
+    </div>
+  </section>
+
+  <!-- QUICK ACTIONS FOR TENANTS -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="label">Tenant Portal</span>
+        <h2>Quick Actions</h2>
+        <p class="section-sub">Access everything from one dashboard.</p>
+      </div>
+      <div class="portal-grid" data-reveal>
+        <div class="portal-card">
+          <i class="fas fa-credit-card"></i>
+          <h3>Pay Rent Online</h3>
+          <p>Pay securely via credit card, debit, or ACH &mdash; anytime, anywhere.</p>
+        </div>
+        <div class="portal-card">
+          <i class="fas fa-wrench"></i>
+          <h3>Maintenance Request</h3>
+          <p>Submit and track repair requests 24/7 through your portal.</p>
+        </div>
+        <div class="portal-card">
+          <i class="fas fa-file-alt"></i>
+          <h3>Lease &amp; Documents</h3>
+          <p>View your lease agreement, community rules, and important notices.</p>
+        </div>
+        <div class="portal-card">
+          <i class="fas fa-headset"></i>
+          <h3>Contact Management</h3>
+          <p>Reach your property manager directly for any questions or concerns.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem;" data-reveal>
+        <a href="portal.html" class="btn">Sign In to Portal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY RENT WITH PMG -->
+  <section class="content-section">
+    <div class="container">
+      <div class="two-col">
+        <div data-reveal>
+          <img src="https://photos.zillowstatic.com/fp/dc54e7834881aa56cf6161cb09030aed-cc_ft_1536.webp" alt="Rental home">
+        </div>
+        <div data-reveal>
+          <span class="label">Why Rent with PMG</span>
+          <h2>Renting Should Be Simple.</h2>
+          <p>We believe tenants deserve a responsive, professional management team. From the moment you apply to the day you move out, PMG makes renting effortless.</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check-circle"></i> Easy online application &amp; move-in process</li>
+            <li><i class="fas fa-check-circle"></i> Secure online rent payment portal</li>
+            <li><i class="fas fa-check-circle"></i> Fast maintenance response &mdash; average under 24 hours</li>
+            <li><i class="fas fa-check-circle"></i> 24/7 emergency maintenance line</li>
+            <li><i class="fas fa-check-circle"></i> Professionally maintained properties</li>
+            <li><i class="fas fa-check-circle"></i> Transparent lease terms with no hidden fees</li>
+          </ul>
+          <a href="listings.html" class="btn" style="margin-top:1rem">Browse Available Rentals</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="label">Getting Started</span>
+        <h2>How Renting with PMG Works</h2>
+      </div>
+      <div class="services-grid" style="color:var(--gray-600)" data-reveal>
+        <div class="service-card" style="background:var(--off-white);border-color:var(--gray-100)">
+          <div class="service-num" style="color:rgba(0,0,0,.05)">01</div>
+          <i class="fas fa-search"></i>
+          <h3 style="color:var(--navy)">Browse Listings</h3>
+          <p style="color:var(--gray-600)">Explore available properties on our listings page. Filter by location, price, bedrooms, and more.</p>
+        </div>
+        <div class="service-card" style="background:var(--off-white);border-color:var(--gray-100)">
+          <div class="service-num" style="color:rgba(0,0,0,.05)">02</div>
+          <i class="fas fa-calendar-check"></i>
+          <h3 style="color:var(--navy)">Schedule a Tour</h3>
+          <p style="color:var(--gray-600)">Contact us to schedule an in-person or virtual tour of any property that catches your eye.</p>
+        </div>
+        <div class="service-card" style="background:var(--off-white);border-color:var(--gray-100)">
+          <div class="service-num" style="color:rgba(0,0,0,.05)">03</div>
+          <i class="fas fa-pen-fancy"></i>
+          <h3 style="color:var(--navy)">Apply &amp; Move In</h3>
+          <p style="color:var(--gray-600)">Complete our simple online application. Once approved, sign your lease and pick up your keys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTER FAQ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="label">Common Questions</span>
+        <h2>Renter FAQs</h2>
+      </div>
+      <div class="faq-list" data-reveal>
+        <div class="faq-item">
+          <button class="faq-question">How do I pay rent? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Rent can be paid online through your tenant portal via credit card, debit card, or ACH transfer. Payments are processed securely and you'll receive a confirmation email.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How do I submit a maintenance request? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Log into your tenant portal and submit a request with details and photos. For emergencies, call our 24/7 emergency line at 123-456-7890.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What is the application process? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Complete our online application which includes a background check, credit check, income verification, and rental history review. We typically process applications within 48 hours.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I have pets? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Pet policies vary by property. Check the listing details or contact us to ask about pet policies for a specific property.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What happens when my lease ends? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>We'll contact you 60 days before your lease expires to discuss renewal options. If you choose to move out, we'll guide you through the move-out process and security deposit return.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner" data-reveal>
+        <div class="cta-text">
+          <h2>Looking for Your Next Home?</h2>
+          <p>Browse our available listings and find the perfect place today.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="listings.html" class="btn">View Listings</a>
+          <a href="contact.html" class="btn btn-outline-light">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo">PMG</a>
+          <p>Property Management Group</p>
+          <p>123 Main Street<br>Reading, PA 19601</p>
+          <p><a href="tel:1234567890">123-456-7890</a></p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>For Owners</h4><a href="portal.html?type=owner">Owner Portal</a><a href="owners.html">Our Services</a><a href="owners.html">Pricing</a></div>
+        <div class="footer-col"><h4>For Renters</h4><a href="portal.html">Tenant Portal</a><a href="listings.html">Find a Rental</a><a href="portal.html">Pay Rent</a></div>
+        <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Office Hours</h4><p>Mon &ndash; Fri: 9AM &ndash; 5PM</p><p>Sat: By Appointment</p><p>Sun: Closed</p></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Property Management Group. All rights reserved. Site by <a href="https://keystonewebsolutions.com" target="_blank" rel="noopener">Keystone Web Solutions</a></p>
+        <div class="footer-legal-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
